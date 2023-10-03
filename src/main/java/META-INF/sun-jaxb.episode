@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+      
+    <!--
+
+Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.0 
+Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2023.10.02 a las 10:21:14 AM ECT 
+
+  -->
+      
+    <bindings xmlns:tns="http://tempuri.org/" if-exists="true" scd="x-schema::tns">
+            
+        <schemaBindings map="false">
+                  
+            <package name="com.cumpleanos.consumowsdl.wsdl"/>
+                
+        </schemaBindings>
+            
+        <bindings if-exists="true" scd="tns:GetMenu">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetMenu"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetMenuResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetMenuResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:Login">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.Login"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:LoginResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.LoginResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:SignUp">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.SignUp"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:SignUpResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.SignUpResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:Olvido">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.Olvido"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:OlvidoResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.OlvidoResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:CreaUsuarios">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.CreaUsuarios"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:CreaUsuariosResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.CreaUsuariosResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:SetClave">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.SetClave"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:SetClaveResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.SetClaveResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:VerificarComprobantes">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.VerificarComprobantes"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:VerificarComprobantesResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.VerificarComprobantesResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetComprobanteData">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetComprobanteData"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetComprobanteDataResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetComprobanteDataResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:RecibirComprobanteObj">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.RecibirComprobanteObj"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:RecibirComprobanteObjResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.RecibirComprobanteObjResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:RecibirComprobante">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.RecibirComprobante"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:RecibirComprobanteResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.RecibirComprobanteResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:ObtieneAutorizacion">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.ObtieneAutorizacion"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:ObtieneAutorizacionResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.ObtieneAutorizacionResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:EnviarComprobante">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.EnviarComprobante"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:EnviarComprobanteResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.EnviarComprobanteResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:ResetComprobante">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.ResetComprobante"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:ResetComprobanteResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.ResetComprobanteResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:MailComprobante">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.MailComprobante"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:MailComprobanteResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.MailComprobanteResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:BuscarAutorizacion">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.BuscarAutorizacion"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:BuscarAutorizacionResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.BuscarAutorizacionResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetMensaje">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetMensaje"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetMensajeResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetMensajeResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:Eliminar">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.Eliminar"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:EliminarResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.EliminarResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:VerificarComprobante">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.VerificarComprobante"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:VerificarComprobanteResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.VerificarComprobanteResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetRespuesta">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetRespuesta"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetRespuestaResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetRespuestaResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetXML">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetXML"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetXMLResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetXMLResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:UploadComprobante">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.UploadComprobante"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:UploadComprobanteResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.UploadComprobanteResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetCabeceraListado">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetCabeceraListado"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetCabeceraListadoResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetCabeceraListadoResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:LoadComprobantes">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.LoadComprobantes"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:LoadComprobantesResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.LoadComprobantesResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:SendMail">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.SendMail"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:SendMailResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.SendMailResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetMailsComprobante">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetMailsComprobante"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetMailsComprobanteResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetMailsComprobanteResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:EditComprobante">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.EditComprobante"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:EditComprobanteResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.EditComprobanteResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:SaveComprobante">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.SaveComprobante"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:SaveComprobanteResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.SaveComprobanteResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetComprobanteFromXML">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetComprobanteFromXML"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetComprobanteFromXMLResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetComprobanteFromXMLResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:EditComprobanteXML">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.EditComprobanteXML"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:EditComprobanteXMLResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.EditComprobanteXMLResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:SaveComprobanteXML">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.SaveComprobanteXML"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:SaveComprobanteXMLResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.SaveComprobanteXMLResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:SaveEmpresa">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.SaveEmpresa"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:SaveEmpresaResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.SaveEmpresaResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetEmpresas">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetEmpresas"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetEmpresasResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetEmpresasResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:CheckComprobantes">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.CheckComprobantes"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:CheckComprobantesResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.CheckComprobantesResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:DevueltoComprobantes">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.DevueltoComprobantes"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:DevueltoComprobantesResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.DevueltoComprobantesResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:RecalcularComprobantes">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.RecalcularComprobantes"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:RecalcularComprobantesResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.RecalcularComprobantesResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:RunService">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.RunService"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:RunServiceResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.RunServiceResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:Resend">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.Resend"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:ResendResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.ResendResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetAllCli">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetAllCli"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GetAllCliResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GetAllCliResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GestionComprobantesAll">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GestionComprobantesAll"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:GestionComprobantesAllResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.GestionComprobantesAllResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:SendPrueba">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.SendPrueba"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:SendPruebaResponse">
+                  
+            <class ref="com.cumpleanos.consumowsdl.wsdl.SendPruebaResponse"/>
+                
+        </bindings>
+          
+    </bindings>
+    
+</bindings>
