@@ -13,11 +13,12 @@ public class SoapController {
     @Autowired
     private SoapClient soapClient;
 
-    @PostMapping("/recibirComprobante/{xml}/{email}/{tipo}")
-    public ResponseEntity<?> recibirComprobante(@RequestParam String xml, @RequestParam String email, @RequestParam int tipo){
+    @PostMapping("/enviarComprobante/")
+    public ResponseEntity<?> prueba(@RequestBody String xml, @RequestParam String email, @RequestParam int tipo){
         RecibirComprobanteResponse response=soapClient.getRecibirComprobanteResponse(xml, email, tipo);
 
         return ResponseEntity.ok(response.getRecibirComprobanteResult());
     }
+
 
 }
