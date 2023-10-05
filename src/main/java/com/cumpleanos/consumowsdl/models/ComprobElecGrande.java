@@ -7,48 +7,46 @@ import org.hibernate.annotations.Subselect;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import java.util.Date;
 
 @Entity
 @Immutable
-@Subselect("SELECT V.* FROM COMPROB_ELEC_GRANDE_V V")
+@Subselect("SELECT XMLF_COMPROBANTE, CCO_FECHA, XMLF_EMPRESA, XMLF_MENSAJE, XMLF_CARACTER, XMLF_ERROR, XMLF_AUTORIZACION, XMLF_CLAVE, XML_TIPO_COMPROBANTE, CLI_MAIL, XMLF_SIZE FROM COMPROB_ELEC_GRANDE_V")
 @Data
 public class ComprobElecGrande {
 
     @Id
     @Column(name = "XMLF_COMPROBANTE")
-    private String comprobante;
+    private String xmlf_comprobante;
 
     @Column(name = "CCO_FECHA")
-    private Date fecha;
+    private Date cco_fecha;
 
     @Column(name = "XMLF_EMPRESA")
-    private Long empresa;
+    private Long xmlf_empresa;
 
     @Column(name = "XMLF_MENSAJE")
-    private String mensaje;
-
-    @Lob
-    @Column(name = "XMLF_CARACTER")
-    private String caracter;
+    private String xmlf_mensaje;
 
     @Column(name = "XMLF_ERROR")
-    private String error;
+    private String xmlf_error;
 
     @Column(name = "XMLF_AUTORIZACION")
-    private String autorizacion;
+    private String xmlf_autorizacion;
 
     @Column(name = "XMLF_CLAVE")
-    private String clave;
+    private String xmlf_clave;
 
     @Column(name = "XML_TIPO_COMPROBANTE")
-    private Long tipoComprobante;
+    private int xml_tipoComprobante;
 
     @Column(name = "CLI_MAIL")
-    private String email;
+    private String cli_mail;
 
     @Column(name = "XMLF_SIZE")
-    private Long size;
+    private Long xmlf_size;
+
+    @Column(name = "XMLF_CARACTER")
+    private String xmlf_caracter;
 
 }
