@@ -5,6 +5,7 @@ import com.cumpleanos.consumowsdl.models.ComprobElecGrande;
 import com.cumpleanos.consumowsdl.repository.ComprobElecGrandeRepository;
 import com.cumpleanos.consumowsdl.wsdl.RecibirComprobanteResponse;
 
+import com.cumpleanos.consumowsdl.wsdl.VerificarComprobanteResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,19 +16,19 @@ import java.util.List;
 
 
 @Component
-public class EnviarComprobanteScheduler {
+public class AutomatizacionWsdlScheduler {
 
-    private final static Logger LOG = LoggerFactory.getLogger(EnviarComprobanteScheduler.class);
+    private final static Logger LOG = LoggerFactory.getLogger(AutomatizacionWsdlScheduler.class);
     private final SoapClient soapClient;
     private final ComprobElecGrandeRepository repository;
 
     @Autowired
-    public EnviarComprobanteScheduler(SoapClient soapClient, ComprobElecGrandeRepository repository) {
+    public AutomatizacionWsdlScheduler(SoapClient soapClient, ComprobElecGrandeRepository repository) {
         this.soapClient = soapClient;
         this.repository = repository;
     }
 
-    @Scheduled(cron = "0 */5 * ? * *")
+    @Scheduled(cron = "${cron.expression.5min}")
     public void enviarComprobanteHora(){
         int ok=0;
         int err=0;
@@ -43,6 +44,9 @@ public class EnviarComprobanteScheduler {
                         ok++;
                     }catch (Exception e){
                         System.out.println("Doc"+com.getXmlf_comprobante()+"Error "+e.getMessage());
+                        System.out.println("Verificando Doc.............");
+                        VerificarComprobanteResponse response=soapClient.getVerificarComprobanteResponse(com.getXmlf_clave());
+                        System.out.println(response.getVerificarComprobanteResult());
                         err++;
                         continue;
                     }
