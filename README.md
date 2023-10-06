@@ -1,3 +1,3 @@
 # ConsumoWsdlSoap
-Metodos de consumo WSDL para SICE de comnrpobantes electronicos y atumotatizarlos
+Metodos de consumo WSDL para SICE de comprobantes electronicos y atumotatizarlos
 
