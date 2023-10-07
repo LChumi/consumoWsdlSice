@@ -1,9 +1,6 @@
 package com.cumpleanos.consumowsdl.client;
 
-import com.cumpleanos.consumowsdl.wsdl.RecibirComprobante;
-import com.cumpleanos.consumowsdl.wsdl.RecibirComprobanteResponse;
-import com.cumpleanos.consumowsdl.wsdl.VerificarComprobante;
-import com.cumpleanos.consumowsdl.wsdl.VerificarComprobanteResponse;
+import com.cumpleanos.consumowsdl.wsdl.*;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.ws.soap.client.core.SoapActionCallback;
 
@@ -43,6 +40,23 @@ public class SoapClient extends WebServiceGatewaySupport {
         SoapActionCallback soapActionCallback=new SoapActionCallback("http://tempuri.org/VerificarComprobante");
 
         VerificarComprobanteResponse response=(VerificarComprobanteResponse) getWebServiceTemplate().marshalSendAndReceive("http://www.siac.com.ec/SICE/ws/Metodos.asmx",verificarComprobante,soapActionCallback);
+
+        return response;
+    }
+
+    /**
+     * Metodo para obtener la autorizacion
+     * @param clave
+     * @return
+     */
+    public ObtieneAutorizacionResponse getObtieneAutorizacion(String clave){
+
+        ObtieneAutorizacion obtieneAutorizacion=new ObtieneAutorizacion();
+        obtieneAutorizacion.setClave(clave);
+
+        SoapActionCallback soapActionCallback=new SoapActionCallback("http://tempuri.org/ObtieneAutorizacion");
+
+        ObtieneAutorizacionResponse response=(ObtieneAutorizacionResponse) getWebServiceTemplate().marshalSendAndReceive("http://www.siac.com.ec/SICE/ws/Metodos.asmx",obtieneAutorizacion,soapActionCallback);
 
         return response;
     }

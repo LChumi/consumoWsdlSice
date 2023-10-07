@@ -1,6 +1,7 @@
 package com.cumpleanos.consumowsdl.controller;
 
 import com.cumpleanos.consumowsdl.client.SoapClient;
+import com.cumpleanos.consumowsdl.wsdl.ObtieneAutorizacionResponse;
 import com.cumpleanos.consumowsdl.wsdl.RecibirComprobanteResponse;
 import com.cumpleanos.consumowsdl.wsdl.VerificarComprobanteResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,17 @@ public class SoapController {
             VerificarComprobanteResponse response= soapClient.getVerificarComprobanteResponse(clave);
 
             return  ResponseEntity.ok(response.getVerificarComprobanteResult());
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PostMapping("/obtieneAutorizacion")
+    public ResponseEntity<?> obtieneAutorizacion(@RequestParam String clave){
+        try{
+            ObtieneAutorizacionResponse response= soapClient.getObtieneAutorizacion(clave);
+
+            return  ResponseEntity.ok(response.getObtieneAutorizacionResult());
         }catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
