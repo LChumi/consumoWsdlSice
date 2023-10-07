@@ -47,7 +47,7 @@ public class SoapClient extends WebServiceGatewaySupport {
     /**
      * Metodo para obtener la autorizacion
      * @param clave
-     * @return
+     * @return devuelve si el documento fue autorizado
      */
     public ObtieneAutorizacionResponse getObtieneAutorizacion(String clave){
 
