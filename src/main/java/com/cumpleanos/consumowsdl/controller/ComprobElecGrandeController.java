@@ -60,7 +60,7 @@ public class ComprobElecGrandeController {
             ComprobElecGrande com=service.porComprobante(comprobante);
             System.out.println(com.getCco_codigo().toString());
             System.out.println(com.getXmlf_empresa());
-            oracleRepository.crearXml(com.getXmlf_empresa(), com.getCco_codigo().toString());
+            oracleRepository.crearXml(com.getXmlf_empresa(), com.getCco_codigo().toString(),com.getXml_tipoComprobante());
 
             return ResponseEntity.ok("Procedimiento ejecutado correctamente");
         } catch (Exception e) {
