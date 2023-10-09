@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/ComprobantesVista")
+@RequestMapping("/comprobantesVista")
 public class ComprobElecGrandeController {
 
     private static final Logger logger = LoggerFactory.getLogger(ComprobElecGrandeController.class);

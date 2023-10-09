@@ -1,9 +1,7 @@
 package com.cumpleanos.consumowsdl.controller;
 
 import com.cumpleanos.consumowsdl.client.SoapClient;
-import com.cumpleanos.consumowsdl.wsdl.ObtieneAutorizacionResponse;
-import com.cumpleanos.consumowsdl.wsdl.RecibirComprobanteResponse;
-import com.cumpleanos.consumowsdl.wsdl.VerificarComprobanteResponse;
+import com.cumpleanos.consumowsdl.wsdl.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -49,5 +47,38 @@ public class SoapController {
         }
     }
 
+    @PostMapping("/getComprobante")
+    public ResponseEntity<?> obtieneComprobante(@RequestParam String clave){
+        try{
+            GetComprobanteDataResponse response= soapClient.getComprobante(clave);
+
+            System.out.println(response.getGetComprobanteDataResult());
+            return ResponseEntity.ok(response.getGetComprobanteDataResult());
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PostMapping("/getRespuesta")
+    public ResponseEntity<?> obtieneRespuesta(@RequestParam String clave){
+        try{
+            GetRespuestaResponse response= soapClient.getRespuesta(clave);
+            System.out.println(response.getGetRespuestaResult());
+            return ResponseEntity.ok(response.getGetRespuestaResult());
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PostMapping("/getXml")
+    public ResponseEntity<?> obtieneXml(@RequestParam String clave){
+        try{
+            GetXMLResponse response= soapClient.getXml(clave);
+            System.out.println(response.getGetXMLResult());
+            return ResponseEntity.ok(response.getGetXMLResult());
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
 }

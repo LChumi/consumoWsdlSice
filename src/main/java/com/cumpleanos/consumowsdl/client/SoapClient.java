@@ -11,7 +11,7 @@ public class SoapClient extends WebServiceGatewaySupport {
      * @param xml
      * @param email
      * @param formato
-     * @return el estado del comprobante
+     * @return el estado del comprobante(OK, El comprobante ya esta en proceso)
      */
     public RecibirComprobanteResponse getRecibirComprobanteResponse(String xml,String email, int formato){
 
@@ -30,7 +30,7 @@ public class SoapClient extends WebServiceGatewaySupport {
     /**
      * Metodo para verificar los comprobantes
      * @param clave
-     * @return comprobante si esta o no verificado
+     * @return comprobante si esta o no verificado(Verificando... o NO COMPROBANTE )
      */
     public VerificarComprobanteResponse getVerificarComprobanteResponse(String clave){
 
@@ -47,7 +47,7 @@ public class SoapClient extends WebServiceGatewaySupport {
     /**
      * Metodo para obtener la autorizacion
      * @param clave
-     * @return devuelve si el documento fue autorizado
+     * @return devuelve si el documento fue autorizado (SIN AUTORIZACION, NO COMPROBANTE O LA CLAVE 09110900...)
      */
     public ObtieneAutorizacionResponse getObtieneAutorizacion(String clave){
 
@@ -57,6 +57,57 @@ public class SoapClient extends WebServiceGatewaySupport {
         SoapActionCallback soapActionCallback=new SoapActionCallback("http://tempuri.org/ObtieneAutorizacion");
 
         ObtieneAutorizacionResponse response=(ObtieneAutorizacionResponse) getWebServiceTemplate().marshalSendAndReceive("http://www.siac.com.ec/SICE/ws/Metodos.asmx",obtieneAutorizacion,soapActionCallback);
+
+        return response;
+    }
+
+    /**
+     * Metodo para obtener el estado del comprobante como devuelto
+     * @param clave
+     * @return devuelve un xml con la respuesta de la solicitud
+     */
+    public GetComprobanteDataResponse getComprobante(String clave){
+
+        GetComprobanteData comprobanteData=new GetComprobanteData();
+        comprobanteData.setClave(clave);
+
+        SoapActionCallback soapActionCallback=new SoapActionCallback("http://tempuri.org/GetComprobanteData");
+
+        GetComprobanteDataResponse response=(GetComprobanteDataResponse) getWebServiceTemplate().marshalSendAndReceive("http://www.siac.com.ec/SICE/ws/Metodos.asmx",comprobanteData,soapActionCallback);
+
+        return response;
+    }
+
+    /**
+     * metodo para obtener la respuesta del comprobante
+     * @param clave
+     * @return un xml dento de el viene si tiene un error cual es el error
+     */
+    public GetRespuestaResponse getRespuesta(String clave){
+
+        GetRespuesta respuesta=new GetRespuesta();
+        respuesta.setClave(clave);
+
+        SoapActionCallback soapActionCallback=new SoapActionCallback("http://tempuri.org/GetRespuesta");
+
+        GetRespuestaResponse response=(GetRespuestaResponse) getWebServiceTemplate().marshalSendAndReceive("http://www.siac.com.ec/SICE/ws/Metodos.asmx",respuesta,soapActionCallback);
+
+        return response;
+    }
+
+    /**
+     * Metodo para obtener el xml del comprobante
+     * @param clave
+     * @return el xml del comprobante
+     */
+    public GetXMLResponse getXml(String clave){
+
+        GetXML xml =new GetXML();
+        xml.setClave(clave);
+
+        SoapActionCallback soapActionCallback=new SoapActionCallback("http://tempuri.org/GetXML");
+
+        GetXMLResponse response=(GetXMLResponse) getWebServiceTemplate().marshalSendAndReceive("http://www.siac.com.ec/SICE/ws/Metodos.asmx",xml,soapActionCallback);
 
         return response;
     }
