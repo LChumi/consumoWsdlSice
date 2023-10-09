@@ -52,7 +52,6 @@ public class SoapController {
         try{
             GetComprobanteDataResponse response= soapClient.getComprobante(clave);
 
-            System.out.println(response.getGetComprobanteDataResult());
             return ResponseEntity.ok(response.getGetComprobanteDataResult());
         }catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -63,7 +62,7 @@ public class SoapController {
     public ResponseEntity<?> obtieneRespuesta(@RequestParam String clave){
         try{
             GetRespuestaResponse response= soapClient.getRespuesta(clave);
-            System.out.println(response.getGetRespuestaResult());
+
             return ResponseEntity.ok(response.getGetRespuestaResult());
         }catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -74,7 +73,7 @@ public class SoapController {
     public ResponseEntity<?> obtieneXml(@RequestParam String clave){
         try{
             GetXMLResponse response= soapClient.getXml(clave);
-            System.out.println(response.getGetXMLResult());
+
             return ResponseEntity.ok(response.getGetXMLResult());
         }catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
