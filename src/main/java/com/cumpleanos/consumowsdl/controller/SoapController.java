@@ -1,11 +1,19 @@
 package com.cumpleanos.consumowsdl.controller;
 
 import com.cumpleanos.consumowsdl.client.SoapClient;
+import com.cumpleanos.consumowsdl.models.modelsxml.Autorizaciones;
+import com.cumpleanos.consumowsdl.models.modelsxml.Comprobante;
+import com.cumpleanos.consumowsdl.models.modelsxml.Data;
 import com.cumpleanos.consumowsdl.wsdl.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import java.io.StringReader;
 
 @RestController
 @RequestMapping("/apiWsdl")
@@ -52,7 +60,14 @@ public class SoapController {
         try{
             GetComprobanteDataResponse response= soapClient.getComprobante(clave);
 
-            return ResponseEntity.ok(response.getGetComprobanteDataResult());
+            String xmlResponse= response.getGetComprobanteDataResult();
+
+            JAXBContext jaxbContext= JAXBContext.newInstance(Data.class);
+            Unmarshaller unmarshaller= jaxbContext.createUnmarshaller();
+
+            Data data= (Data) unmarshaller.unmarshal(new StringReader(xmlResponse));
+
+            return ResponseEntity.ok(data);
         }catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -62,8 +77,32 @@ public class SoapController {
     public ResponseEntity<?> obtieneRespuesta(@RequestParam String clave){
         try{
             GetRespuestaResponse response= soapClient.getRespuesta(clave);
+            String xmlResponse=response.getGetRespuestaResult();
 
-            return ResponseEntity.ok(response.getGetRespuestaResult());
+            JAXBContext jaxbContext;
+            Unmarshaller unmarshaller;
+            Object responseObject=null;
+            try {
+                if (xmlResponse.contains("<autorizaciones>")) {
+                    jaxbContext=JAXBContext.newInstance(Autorizaciones.class);
+                    unmarshaller=jaxbContext.createUnmarshaller();
+                    responseObject=(Autorizaciones) unmarshaller.unmarshal(new StringReader(xmlResponse));
+                } else if (xmlResponse.contains("<comprobante>")){
+                    jaxbContext=JAXBContext.newInstance(Comprobante.class);
+                    unmarshaller=jaxbContext.createUnmarshaller();
+                    responseObject=(Comprobante) unmarshaller.unmarshal(new StringReader(xmlResponse));
+                }
+            }catch (JAXBException e){
+                System.out.println(e);
+                e.printStackTrace();
+            }
+
+            if (responseObject!= null){
+                return ResponseEntity.ok(responseObject);
+            }else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+
         }catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }

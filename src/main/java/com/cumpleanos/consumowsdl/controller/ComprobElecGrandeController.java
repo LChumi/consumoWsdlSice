@@ -19,8 +19,6 @@ import java.util.List;
 @RequestMapping("/comprobantesVista")
 public class ComprobElecGrandeController {
 
-    private static final Logger logger = LoggerFactory.getLogger(ComprobElecGrandeController.class);
-
     @Autowired
     private ComprobElecGrandeService service;
 
