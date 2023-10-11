@@ -3,8 +3,6 @@ package com.cumpleanos.consumowsdl.controller;
 import com.cumpleanos.consumowsdl.models.ComprobElecGrande;
 import com.cumpleanos.consumowsdl.repository.ProcedureOracleRepository;
 import com.cumpleanos.consumowsdl.services.ComprobElecGrandeService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,10 +19,8 @@ public class ComprobElecGrandeController {
 
     @Autowired
     private ComprobElecGrandeService service;
-
     @Autowired
     private ProcedureOracleRepository oracleRepository;
-
 
     @GetMapping("/listar")
     public ResponseEntity<List<ComprobElecGrande>> listar(){
@@ -56,8 +52,6 @@ public class ComprobElecGrandeController {
     public ResponseEntity<?> crearXml(@PathVariable String comprobante){
         try {
             ComprobElecGrande com=service.porComprobante(comprobante);
-            System.out.println(com.getCco_codigo().toString());
-            System.out.println(com.getXmlf_empresa());
             oracleRepository.crearXml(com.getXmlf_empresa(), com.getCco_codigo().toString(),com.getXml_tipoComprobante());
 
             return ResponseEntity.ok("Procedimiento ejecutado correctamente");
