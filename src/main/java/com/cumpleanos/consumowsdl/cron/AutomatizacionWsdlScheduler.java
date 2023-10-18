@@ -38,7 +38,7 @@ public class AutomatizacionWsdlScheduler {
     }
 
     @Scheduled(cron = "${cron.expression.30min}")
-    public void gestionSise(){
+    private void gestionSise(){
         LOG.info("Iniciando proceso... ");
         try {
             List<ComprobElecGrande> comprobantes= repository.findAll();
@@ -49,7 +49,9 @@ public class AutomatizacionWsdlScheduler {
                         creaXmlEnvia(c);
                     } else {
                         String autorizacionEstado=obtieneAuth(c);
-                        if (autorizacionEstado.contains("NO COMPROBANTE") || autorizacionEstado.contains("SIN AUTORIZACION")){
+                        if (autorizacionEstado.equals(c.getXmlf_clave())){
+                            //guardar en BD
+                        } else if (autorizacionEstado.contains("NO COMPROBANTE") || autorizacionEstado.contains("SIN AUTORIZACION")) {
                             if (autorizacionEstado.contains("NO COMPROBANTE")) {
                                 enviarXml(c);
                             }
@@ -63,7 +65,7 @@ public class AutomatizacionWsdlScheduler {
         }
     }
 
-    protected void creaXml(ComprobElecGrande c){
+    private void creaXml(ComprobElecGrande c){
         try {
             oracleRepository.crearXml(c.getXmlf_empresa(), c.getCco_codigo().toString(),c.getXml_tipoComprobante());
         }catch (Exception e){
@@ -71,7 +73,7 @@ public class AutomatizacionWsdlScheduler {
         }
     }
 
-    protected String obtieneAuth(ComprobElecGrande c){
+    private String obtieneAuth(ComprobElecGrande c){
         try {
             ObtieneAutorizacionResponse autorizacion=soapClient.getObtieneAutorizacion(c.getXmlf_clave());
             return autorizacion.getObtieneAutorizacionResult();
@@ -81,7 +83,7 @@ public class AutomatizacionWsdlScheduler {
         }
     }
 
-    protected String enviarXml(ComprobElecGrande c){
+    private String enviarXml(ComprobElecGrande c){
         try {
             RecibirComprobanteResponse recibe= soapClient.getRecibirComprobanteResponse(c.getXmlf_caracter(), c.getCli_mail(), c.getXml_tipoComprobante());
             return recibe.getRecibirComprobanteResult();
@@ -92,7 +94,7 @@ public class AutomatizacionWsdlScheduler {
     }
 
 
-    protected String verificarComprobante(ComprobElecGrande c){
+    private String verificarComprobante(ComprobElecGrande c){
         try {
             VerificarComprobanteResponse verifica= soapClient.getVerificarComprobanteResponse(c.getXmlf_clave());
             return verifica.getVerificarComprobanteResult();
@@ -102,7 +104,7 @@ public class AutomatizacionWsdlScheduler {
         }
     }
 
-    protected String obtenerEstado(ComprobElecGrande c){
+    private String obtenerEstado(ComprobElecGrande c){
         try{
             GetComprobanteDataResponse response= soapClient.getComprobante(c.getXmlf_clave());
 
@@ -124,7 +126,7 @@ public class AutomatizacionWsdlScheduler {
         }
     }
 
-    protected String obtenerRespuesta(ComprobElecGrande c){
+    private String obtenerRespuesta(ComprobElecGrande c){
         try{
             GetRespuestaResponse response= soapClient.getRespuesta(c.getXmlf_clave());
             String xmlResponse=response.getGetRespuestaResult();
@@ -151,7 +153,7 @@ public class AutomatizacionWsdlScheduler {
         return "Error";
     }
 
-    protected void creaXmlEnvia(ComprobElecGrande c){
+    private void creaXmlEnvia(ComprobElecGrande c){
         try {
             creaXml(c);
             enviarXml(c);
@@ -160,13 +162,15 @@ public class AutomatizacionWsdlScheduler {
         }
     }
 
-    protected  void verificarYProcesar(ComprobElecGrande c){
+    private  void verificarYProcesar(ComprobElecGrande c){
         try {
             verificarComprobante(c);
             String estado=obtenerEstado(c);
-            if (estado.contains("Autorizado")){
+            if (estado.equalsIgnoreCase("Autorizado")){
+                System.out.println(estado+" "+obtieneAuth(c));
                 obtieneAuth(c);
             } else if (estado.contains("Enviado")) {
+                //guardar en BD
                 obtenerRespuesta(c);
             }else{
                 obtenerRespuesta(c);
