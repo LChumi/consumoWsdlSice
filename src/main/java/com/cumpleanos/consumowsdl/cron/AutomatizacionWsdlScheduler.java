@@ -74,7 +74,6 @@ public class AutomatizacionWsdlScheduler {
     protected String obtieneAuth(ComprobElecGrande c){
         try {
             ObtieneAutorizacionResponse autorizacion=soapClient.getObtieneAutorizacion(c.getXmlf_clave());
-            System.out.println(autorizacion.getObtieneAutorizacionResult());
             return autorizacion.getObtieneAutorizacionResult();
         }catch (Exception e){
             LOG.error(c.getXmlf_comprobante()+" "+"Error "+e.getMessage());
