@@ -1,10 +1,13 @@
 package com.cumpleanos.consumowsdl.controller;
 
 import com.cumpleanos.consumowsdl.client.SoapClient;
+import com.cumpleanos.consumowsdl.cron.AutomatizacionWsdlScheduler;
 import com.cumpleanos.consumowsdl.models.modelsxml.Autorizaciones;
 import com.cumpleanos.consumowsdl.models.modelsxml.Comprobante;
 import com.cumpleanos.consumowsdl.models.modelsxml.Data;
 import com.cumpleanos.consumowsdl.wsdl.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +22,8 @@ import java.io.StringReader;
 @RequestMapping("/apiWsdl")
 public class SoapController {
 
+    private final static Logger LOG = LoggerFactory.getLogger(SoapController.class);
+
     @Autowired
     private SoapClient soapClient;
 
@@ -29,6 +34,7 @@ public class SoapController {
 
             return ResponseEntity.ok(response.getRecibirComprobanteResult());
         }catch (Exception e){
+            LOG.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -40,6 +46,7 @@ public class SoapController {
 
             return  ResponseEntity.ok(response.getVerificarComprobanteResult());
         }catch (Exception e){
+            LOG.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -51,6 +58,7 @@ public class SoapController {
 
             return  ResponseEntity.ok(response.getObtieneAutorizacionResult());
         }catch (Exception e){
+            LOG.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -69,6 +77,7 @@ public class SoapController {
 
             return ResponseEntity.ok(data);
         }catch (Exception e){
+            LOG.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -93,8 +102,7 @@ public class SoapController {
                     responseObject=(Comprobante) unmarshaller.unmarshal(new StringReader(xmlResponse));
                 }
             }catch (JAXBException e){
-                System.out.println(e);
-                e.printStackTrace();
+                LOG.error(e.getMessage());
             }
 
             if (responseObject!= null){
@@ -104,6 +112,7 @@ public class SoapController {
             }
 
         }catch (Exception e){
+            LOG.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -115,6 +124,7 @@ public class SoapController {
 
             return ResponseEntity.ok(response.getGetXMLResult());
         }catch (Exception e){
+            LOG.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

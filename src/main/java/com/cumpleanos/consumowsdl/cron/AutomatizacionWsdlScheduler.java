@@ -37,7 +37,7 @@ public class AutomatizacionWsdlScheduler {
         this.oracleRepository = oracleRepository;
     }
 
-    @Scheduled(cron = "${cron.expression.30min}")
+    //@Scheduled(cron = "${cron.expression.30min}")
     private void gestionSise(){
         LOG.info("Iniciando proceso... ");
         try {
@@ -50,7 +50,7 @@ public class AutomatizacionWsdlScheduler {
                     } else {
                         String autorizacionEstado=obtieneAuth(c);
                         if (autorizacionEstado.equals(c.getXmlf_clave())){
-                            //guardar en BD
+                            //guardar en BD -> ccomfac
                         } else if (autorizacionEstado.contains("NO COMPROBANTE") || autorizacionEstado.contains("SIN AUTORIZACION")) {
                             if (autorizacionEstado.contains("NO COMPROBANTE")) {
                                 enviarXml(c);
@@ -92,7 +92,6 @@ public class AutomatizacionWsdlScheduler {
             return "Error";
         }
     }
-
 
     private String verificarComprobante(ComprobElecGrande c){
         try {
@@ -170,7 +169,7 @@ public class AutomatizacionWsdlScheduler {
                 System.out.println(estado+" "+obtieneAuth(c));
                 obtieneAuth(c);
             } else if (estado.contains("Enviado")) {
-                //guardar en BD
+                //guardar en BD -> xmlfac
                 obtenerRespuesta(c);
             }else{
                 obtenerRespuesta(c);

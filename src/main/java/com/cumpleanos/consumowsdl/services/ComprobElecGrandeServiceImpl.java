@@ -23,5 +23,4 @@ public class ComprobElecGrandeServiceImpl implements ComprobElecGrandeService {
         return repository.findByXmlf_comprobante(comprobante);
     }
 
-
 }

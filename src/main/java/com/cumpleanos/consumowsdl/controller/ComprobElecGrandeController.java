@@ -1,8 +1,11 @@
 package com.cumpleanos.consumowsdl.controller;
 
+import com.cumpleanos.consumowsdl.cron.AutomatizacionWsdlScheduler;
 import com.cumpleanos.consumowsdl.models.ComprobElecGrande;
 import com.cumpleanos.consumowsdl.repository.ProcedureOracleRepository;
 import com.cumpleanos.consumowsdl.services.ComprobElecGrandeService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +19,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/comprobantesVista")
 public class ComprobElecGrandeController {
+
+    private final static Logger LOG = LoggerFactory.getLogger(ComprobElecGrandeController.class);
 
     @Autowired
     private ComprobElecGrandeService service;
@@ -31,6 +36,7 @@ public class ComprobElecGrandeController {
             }
             return new ResponseEntity<>(listaComprobantes,HttpStatus.OK);
         }catch (Exception e){
+            LOG.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -44,6 +50,7 @@ public class ComprobElecGrandeController {
             }
             return new ResponseEntity<>(compr,HttpStatus.OK);
         }catch (Exception e){
+            LOG.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -56,6 +63,7 @@ public class ComprobElecGrandeController {
 
             return ResponseEntity.ok("Procedimiento ejecutado correctamente");
         } catch (Exception e) {
+            LOG.error(e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error "+e);
         }
     }
