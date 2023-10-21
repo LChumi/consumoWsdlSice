@@ -28,7 +28,10 @@ public class XmlFacServiceImpl implements XmlFacService{
         return xmlFacRepository.save(xmlFac);
     }
 
-
+    @Override
+    public void actualizarPorComprobante(BigInteger id, String error,Long empresa) {
+         xmlFacRepository.updateXmlFacByXmlfCcoComproba(id,error,empresa);
+    }
 
 
 }

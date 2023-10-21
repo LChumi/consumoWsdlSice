@@ -49,8 +49,8 @@ public class XmlFacController {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
             xml.setXmlfError(error);
-            service.guardar(xml);
-            //service.actualizarPorComprobante(xml.getXmlfCcoComproba(), error);
+            //service.guardar(xml);
+            service.actualizarPorComprobante(xml.getXmlfCcoComproba(), error,xml.getXmlfEmpresa());
             XmlFac xmlActualizado=service.porId(id);
             return ResponseEntity.ok(xmlActualizado);
         }catch (Exception e){

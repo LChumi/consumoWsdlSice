@@ -13,4 +13,5 @@ public interface XmlFacService {
 
     public XmlFac porId(BigInteger id);
     public XmlFac guardar(XmlFac xmlFac);
+    public void actualizarPorComprobante(BigInteger id,String error,Long empresa);
 }
