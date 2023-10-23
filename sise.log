@@ -1,35 +1,70 @@
-2023-10-23 10:42:16.194  INFO 7640 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.8 on LChumi with PID 7640 (C:\Users\Luis\Documents\Workspace\consumowsdl\target\classes started by Luis in C:\Users\Luis\Documents\Workspace\consumowsdl)
-2023-10-23 10:42:16.201 DEBUG 7640 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2023-10-23 10:42:16.204  INFO 7640 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2023-10-23 10:42:16.316  INFO 7640 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Luis\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Luis/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
-2023-10-23 10:42:16.317  INFO 7640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-10-23 10:42:16.319  INFO 7640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-10-23 10:42:17.285  INFO 7640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-10-23 10:42:17.369  INFO 7640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 3 JPA repository interfaces.
-2023-10-23 10:42:17.693  INFO 7640 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$cf47ae87] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2023-10-23 10:42:17.761  INFO 7640 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2023-10-23 10:42:18.104  INFO 7640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2023-10-23 10:42:18.114  INFO 7640 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-10-23 10:42:18.115  INFO 7640 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2023-10-23 10:42:18.202  INFO 7640 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-10-23 10:42:18.202  INFO 7640 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1882 ms
-2023-10-23 10:42:18.437  INFO 7640 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-10-23 10:42:18.500  INFO 7640 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-10-23 10:42:18.689  INFO 7640 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-10-23 10:42:18.797  INFO 7640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-10-23 10:42:19.152  INFO 7640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-10-23 10:42:19.173  INFO 7640 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2023-10-23 10:42:19.972  INFO 7640 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-10-23 10:42:19.982  INFO 7640 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-10-23 10:42:20.614  INFO 7640 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
-2023-10-23 10:42:20.846  WARN 7640 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-10-23 10:42:21.383  INFO 7640 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-10-23 10:42:21.429  INFO 7640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2023-10-23 10:42:21.445  INFO 7640 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 5.835 seconds (JVM running for 6.95)
-2023-10-23 10:42:30.457  INFO 7640 --- [http-nio-7571-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-10-23 10:42:30.458  INFO 7640 --- [http-nio-7571-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-10-23 10:42:30.458  INFO 7640 --- [http-nio-7571-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2023-10-23 10:42:31.098  INFO 7640 --- [http-nio-7571-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 242 ms
-2023-10-23 10:43:22.440  INFO 7640 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-10-23 10:43:22.444  INFO 7640 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-10-23 10:43:22.498  INFO 7640 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-23 10:49:37.956  INFO 16804 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.8 on LChumi with PID 16804 (C:\Users\Luis\Documents\Workspace\consumowsdl\target\classes started by Luis in C:\Users\Luis\Documents\Workspace\consumowsdl)
+2023-10-23 10:49:37.957 DEBUG 16804 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
+2023-10-23 10:49:37.957  INFO 16804 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-10-23 10:49:38.033  INFO 16804 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Luis\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Luis/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-10-23 10:49:38.033  INFO 16804 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-23 10:49:38.035  INFO 16804 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-23 10:49:38.631  INFO 16804 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-23 10:49:38.690  INFO 16804 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 3 JPA repository interfaces.
+2023-10-23 10:49:38.907  INFO 16804 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b3f5e570] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-23 10:49:38.939  INFO 16804 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2023-10-23 10:49:39.188  INFO 16804 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
+2023-10-23 10:49:39.195  INFO 16804 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-23 10:49:39.196  INFO 16804 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-10-23 10:49:39.262  INFO 16804 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-23 10:49:39.262  INFO 16804 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1227 ms
+2023-10-23 10:49:39.420  INFO 16804 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-23 10:49:39.476  INFO 16804 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-23 10:49:39.608  INFO 16804 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-23 10:49:39.694  INFO 16804 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-23 10:49:39.963  INFO 16804 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-23 10:49:39.984  INFO 16804 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2023-10-23 10:49:40.554  INFO 16804 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-23 10:49:40.561  INFO 16804 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-23 10:49:41.002  INFO 16804 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2023-10-23 10:49:41.120  WARN 16804 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-23 10:49:41.526  INFO 16804 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-23 10:49:41.553  INFO 16804 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
+2023-10-23 10:49:41.566  INFO 16804 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 3.955 seconds (JVM running for 4.598)
+2023-10-23 10:49:41.610  INFO 16804 --- [http-nio-7571-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-23 10:49:41.611  INFO 16804 --- [http-nio-7571-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-23 10:49:41.611  INFO 16804 --- [http-nio-7571-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-10-23 10:49:42.151  INFO 16804 --- [http-nio-7571-exec-5] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 243 ms
+2023-10-23 10:50:35.397  INFO 16804 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-23 10:50:35.399  INFO 16804 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-23 10:50:35.463  INFO 16804 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-23 10:57:58.191  INFO 21444 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.8 on LChumi with PID 21444 (C:\Users\Luis\Documents\Workspace\consumowsdl\target\classes started by Luis in C:\Users\Luis\Documents\Workspace\consumowsdl)
+2023-10-23 10:57:58.191 DEBUG 21444 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
+2023-10-23 10:57:58.193  INFO 21444 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-10-23 10:57:58.245  INFO 21444 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Luis\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Luis/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-10-23 10:57:58.245  INFO 21444 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-23 10:57:58.245  INFO 21444 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-23 10:57:58.876  INFO 21444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-23 10:57:58.939  INFO 21444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 3 JPA repository interfaces.
+2023-10-23 10:57:59.143  INFO 21444 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$95cce55b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-23 10:57:59.175  INFO 21444 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2023-10-23 10:57:59.410  INFO 21444 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
+2023-10-23 10:57:59.417  INFO 21444 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-23 10:57:59.417  INFO 21444 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-10-23 10:57:59.481  INFO 21444 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-23 10:57:59.481  INFO 21444 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1235 ms
+2023-10-23 10:57:59.634  INFO 21444 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-23 10:57:59.671  INFO 21444 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-23 10:57:59.802  INFO 21444 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-23 10:57:59.882  INFO 21444 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-23 10:58:00.152  INFO 21444 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-23 10:58:00.167  INFO 21444 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2023-10-23 10:58:00.714  INFO 21444 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-23 10:58:00.722  INFO 21444 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-23 10:58:01.153  INFO 21444 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2023-10-23 10:58:01.270  WARN 21444 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-23 10:58:01.620  INFO 21444 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-23 10:58:01.651  INFO 21444 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
+2023-10-23 10:58:01.662  INFO 21444 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 3.778 seconds (JVM running for 4.372)
+2023-10-23 10:58:10.904  INFO 21444 --- [http-nio-7571-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-23 10:58:10.905  INFO 21444 --- [http-nio-7571-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-23 10:58:10.906  INFO 21444 --- [http-nio-7571-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-23 10:58:11.597  INFO 21444 --- [http-nio-7571-exec-2] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 383 ms
+2023-10-23 10:58:39.048  INFO 21444 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-23 10:58:39.051  INFO 21444 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-23 10:58:39.167  INFO 21444 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

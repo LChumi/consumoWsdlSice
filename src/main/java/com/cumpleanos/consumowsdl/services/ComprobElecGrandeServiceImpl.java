@@ -29,4 +29,9 @@ public class ComprobElecGrandeServiceImpl implements ComprobElecGrandeService {
         return repository.findByCco_codigoAndXmlf_empresa(id, empresa);
     }
 
+    @Override
+    public ComprobElecGrande porClave(String clave) {
+        return repository.findByXmlf_clave(clave);
+    }
+
 }

@@ -18,4 +18,7 @@ public interface ComprobElecGrandeRepository extends JpaRepository<ComprobElecGr
 
     @Query(value = "SELECT  V FROM ComprobElecGrande V WHERE V.cco_codigo=:id")
     ComprobElecGrande findByCco_codigo(BigInteger id);
+
+    @Query(value =  "SELECT V FROM ComprobElecGrande  V  WHERE V.xmlf_clave=:clave")
+    ComprobElecGrande findByXmlf_clave(String clave);
 }
