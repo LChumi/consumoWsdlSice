@@ -82,6 +82,25 @@ public class SoapController {
         }
     }
 
+    @PostMapping("/obtenerEstado")
+    public ResponseEntity<String> obtenerEstado(@RequestParam String clave){
+        try{
+            GetComprobanteDataResponse response= soapClient.getComprobante(clave);
+
+            String xmlResponse= response.getGetComprobanteDataResult();
+
+            JAXBContext jaxbContext= JAXBContext.newInstance(Data.class);
+            Unmarshaller unmarshaller= jaxbContext.createUnmarshaller();
+
+            Data data= (Data) unmarshaller.unmarshal(new StringReader(xmlResponse));
+
+            return ResponseEntity.ok(data.getEstado());
+        }catch (Exception e){
+            LOG.error(e.getMessage());
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @PostMapping("/getRespuesta")
     public ResponseEntity<?> obtieneRespuesta(@RequestParam String clave){
         try{
@@ -107,6 +126,46 @@ public class SoapController {
 
             if (responseObject!= null){
                 return ResponseEntity.ok(responseObject);
+            }else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+
+        }catch (Exception e){
+            LOG.error(e.getMessage());
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PostMapping("/verRespuesta")
+    public ResponseEntity<String> verRespuesta(@RequestParam String clave){
+        try{
+            String respuesta="";
+
+            GetRespuestaResponse response= soapClient.getRespuesta(clave);
+            String xmlResponse=response.getGetRespuestaResult();
+
+            JAXBContext jaxbContext;
+            Unmarshaller unmarshaller;
+            Object responseObject=null;
+            try {
+                if (xmlResponse.contains("<autorizaciones>")) {
+                    jaxbContext=JAXBContext.newInstance(Autorizaciones.class);
+                    unmarshaller=jaxbContext.createUnmarshaller();
+                    responseObject=(Autorizaciones) unmarshaller.unmarshal(new StringReader(xmlResponse));
+                    Autorizaciones auth=(Autorizaciones) unmarshaller.unmarshal(new StringReader(xmlResponse));
+                    respuesta=auth.getAutorizacion().getEstado();
+                } else if (xmlResponse.contains("<comprobante>")){
+                    jaxbContext=JAXBContext.newInstance(Comprobante.class);
+                    unmarshaller=jaxbContext.createUnmarshaller();
+                    responseObject=(Comprobante) unmarshaller.unmarshal(new StringReader(xmlResponse));
+                    Comprobante com=(Comprobante) unmarshaller.unmarshal(new StringReader(xmlResponse));
+                    respuesta=com.getMensajes().getMensaje().getInformacionAdicional();                }
+            }catch (JAXBException e){
+                LOG.error(e.getMessage());
+            }
+
+            if (responseObject!= null){
+                return ResponseEntity.ok(respuesta);
             }else {
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
