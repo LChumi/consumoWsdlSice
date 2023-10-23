@@ -5,7 +5,6 @@
 
 package com.cumpleanos.consumowsdl.controller;
 
-import com.cumpleanos.consumowsdl.cron.AutomatizacionWsdlScheduler;
 import com.cumpleanos.consumowsdl.models.XmlFac;
 import com.cumpleanos.consumowsdl.services.XmlFacService;
 import org.slf4j.Logger;
@@ -23,11 +22,10 @@ public class XmlFacController {
 
     private final static Logger LOG = LoggerFactory.getLogger(XmlFacController.class);
 
-
     @Autowired
     private XmlFacService service;
 
-    @GetMapping("/PorId/{id}/{empresa}/porEmpresa")
+    @GetMapping("/porId/{id}/{empresa}/porEmpresa")
     public ResponseEntity<XmlFac> listaPorId(@PathVariable BigInteger id, @PathVariable Long empresa){
         try {
             XmlFac xml=service.porIdYEmpresa(id,empresa);
@@ -41,8 +39,6 @@ public class XmlFacController {
         }
     }
 
-
-
     @PutMapping("/actualizarError/{id}/{error}/{empresa}")
     public ResponseEntity<XmlFac> actualizarError(@PathVariable BigInteger id,@PathVariable String error,@PathVariable Long empresa){
         try{
@@ -50,8 +46,6 @@ public class XmlFacController {
             if (xml==null){
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
-            xml.setXmlfError(error);
-            //service.guardar(xml);
             service.actualizarPorComprobante(xml.getXmlfCcoComproba(), error,xml.getXmlfEmpresa());
             XmlFac xmlActualizado=service.porIdYEmpresa(id,empresa);
             return ResponseEntity.ok(xmlActualizado);
