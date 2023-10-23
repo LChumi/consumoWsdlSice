@@ -56,10 +56,10 @@ public class ComprobElecGrandeController {
         }
     }
 
-    @GetMapping("/creaXml/{cco}")
-    public ResponseEntity<?> crearXml(@PathVariable BigInteger cco){
+    @GetMapping("/creaXml/{cco}/empresa/{empresa}")
+    public ResponseEntity<?> crearXml(@PathVariable BigInteger cco,@PathVariable Long empresa){
         try {
-            ComprobElecGrande com=service.porCco(cco);
+            ComprobElecGrande com=service.porCcoYEmpresa(cco,empresa);
             oracleRepository.crearXml(com.getXmlf_empresa(), com.getCco_codigo().toString(),com.getXml_tipoComprobante());
 
             return ResponseEntity.ok("Procedimiento ejecutado correctamente");
