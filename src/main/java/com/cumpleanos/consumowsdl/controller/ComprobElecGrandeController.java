@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigInteger;
 import java.util.List;
 
 @RestController
@@ -41,24 +42,25 @@ public class ComprobElecGrandeController {
         }
     }
 
-    @GetMapping("/buscarComprobante/{comprobante}")
-    public ResponseEntity<ComprobElecGrande> buscar(@PathVariable String comprobante){
+
+    @GetMapping("/buscarPorCco/{id}")
+    public ResponseEntity<ComprobElecGrande> porCco(@PathVariable BigInteger id){
         try{
-            ComprobElecGrande compr= service.porComprobante(comprobante);
-            if (compr==null){
+            ComprobElecGrande comp= service.porCco(id);
+            if (comp==null){
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
-            return new ResponseEntity<>(compr,HttpStatus.OK);
+            return new ResponseEntity<>(comp,HttpStatus.OK);
         }catch (Exception e){
             LOG.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @GetMapping("/creaXml/{comprobante}")
-    public ResponseEntity<?> crearXml(@PathVariable String comprobante){
+    @GetMapping("/creaXml/{cco}")
+    public ResponseEntity<?> crearXml(@PathVariable BigInteger cco){
         try {
-            ComprobElecGrande com=service.porComprobante(comprobante);
+            ComprobElecGrande com=service.porCco(cco);
             oracleRepository.crearXml(com.getXmlf_empresa(), com.getCco_codigo().toString(),com.getXml_tipoComprobante());
 
             return ResponseEntity.ok("Procedimiento ejecutado correctamente");

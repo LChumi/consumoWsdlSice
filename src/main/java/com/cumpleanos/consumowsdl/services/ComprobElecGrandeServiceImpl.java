@@ -5,6 +5,7 @@ import com.cumpleanos.consumowsdl.repository.ComprobElecGrandeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
 import java.util.List;
 
 @Service
@@ -19,8 +20,13 @@ public class ComprobElecGrandeServiceImpl implements ComprobElecGrandeService {
     }
 
     @Override
-    public ComprobElecGrande porComprobante(String comprobante) {
-        return repository.findByXmlf_comprobante(comprobante);
+    public ComprobElecGrande porCco(BigInteger id) {
+        return repository.findByCco_codigo(id);
+    }
+
+    @Override
+    public ComprobElecGrande porCcoYEmpresa(BigInteger id, Long empresa) {
+        return repository.findByCco_codigoAndXmlf_empresa(id, empresa);
     }
 
 }

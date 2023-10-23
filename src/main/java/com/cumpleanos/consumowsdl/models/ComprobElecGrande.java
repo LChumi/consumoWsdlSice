@@ -17,6 +17,9 @@ import java.util.Date;
 public class ComprobElecGrande {
 
     @Id
+    @Column(name = "CCO_CODIGO")
+    private BigInteger cco_codigo;
+
     @Column(name = "XMLF_COMPROBANTE")
     private String xmlf_comprobante;
 
@@ -25,9 +28,6 @@ public class ComprobElecGrande {
 
     @Column(name = "XMLF_EMPRESA")
     private Long xmlf_empresa;
-
-    @Column(name = "CCO_CODIGO")
-    private BigInteger cco_codigo;
 
     @Column(name = "XMLF_MENSAJE")
     private String xmlf_mensaje;
