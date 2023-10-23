@@ -40,15 +40,14 @@ public class XmlFacController {
     }
 
     @PutMapping("/actualizarError/{id}/{error}/{empresa}")
-    public ResponseEntity<XmlFac> actualizarError(@PathVariable BigInteger id,@PathVariable String error,@PathVariable Long empresa){
+    public ResponseEntity<?> actualizarError(@PathVariable BigInteger id,@PathVariable String error,@PathVariable Long empresa){
         try{
             XmlFac xml=service.porIdYEmpresa(id,empresa);
             if (xml==null){
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Xml no encontrado");
             }
             service.actualizarPorComprobante(xml.getXmlfCcoComproba(), error,xml.getXmlfEmpresa());
-            XmlFac xmlActualizado=service.porIdYEmpresa(id,empresa);
-            return ResponseEntity.ok(xmlActualizado);
+            return ResponseEntity.ok("XmlFac Actualizado");
         }catch (Exception e){
             LOG.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

@@ -47,7 +47,7 @@ public class CComfacController {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cfac no encontrado");
             }
             service.actualizarPorCcoEmpresa(cco, empresa, autorizacion);
-            return ResponseEntity.ok("Actualizado");
+            return ResponseEntity.ok("CComfac actualizado");
         }catch (Exception e){
             LOG.error(e.getMessage());
             return new ResponseEntity<>("Hubo un error al actualizar", HttpStatus.INTERNAL_SERVER_ERROR);
