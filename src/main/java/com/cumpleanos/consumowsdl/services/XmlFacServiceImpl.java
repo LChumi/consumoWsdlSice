@@ -19,11 +19,6 @@ public class XmlFacServiceImpl implements XmlFacService{
     private XmlFacRepository xmlFacRepository;
 
     @Override
-    public XmlFac porId(BigInteger id) {
-        return xmlFacRepository.findByXmlfCcoComproba(id);
-    }
-
-    @Override
     public XmlFac guardar(XmlFac xmlFac) {
         return xmlFacRepository.save(xmlFac);
     }
@@ -31,6 +26,11 @@ public class XmlFacServiceImpl implements XmlFacService{
     @Override
     public void actualizarPorComprobante(BigInteger id, String error,Long empresa) {
          xmlFacRepository.updateXmlFacByXmlfCcoComproba(id,error,empresa);
+    }
+
+    @Override
+    public XmlFac porIdYEmpresa(BigInteger id, Long empresa) {
+        return xmlFacRepository.findByXmlfCcoComprobaAndXmlfEmpresa(id, empresa);
     }
 
 

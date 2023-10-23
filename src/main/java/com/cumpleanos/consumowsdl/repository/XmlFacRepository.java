@@ -17,16 +17,13 @@ import java.util.List;
 
 public interface XmlFacRepository extends JpaRepository<XmlFac, BigInteger> {
 
-    @Query(value = "SELECT V FROM XmlFac V ")
-    public List<XmlFac> findAll();
-
-    @Query(value = "SELECT V FROM XmlFac V WHERE V.xmlfCcoComproba=:id")
-    public XmlFac findByXmlfCcoComproba(BigInteger id);
+    @Query(value = "SELECT V FROM XmlFac V WHERE V.xmlfCcoComproba=:id and V.xmlfEmpresa=:empresa")
+    XmlFac findByXmlfCcoComprobaAndXmlfEmpresa(BigInteger id,Long empresa);
 
     @Query(value = "UPDATE XmlFac SET xmlfError=:xmlfError WHERE xmlfCcoComproba=:id AND xmlfEmpresa=:empresa")
     @Modifying
     @Transactional
-    public void updateXmlFacByXmlfCcoComproba(@Param("id") BigInteger id,@Param("xmlfError") String xmlfError,@Param("empresa") Long empresa);
+    void updateXmlFacByXmlfCcoComproba(@Param("id") BigInteger id,@Param("xmlfError") String xmlfError,@Param("empresa") Long empresa);
 
 
 }

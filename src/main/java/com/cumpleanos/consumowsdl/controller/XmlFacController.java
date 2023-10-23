@@ -27,10 +27,10 @@ public class XmlFacController {
     @Autowired
     private XmlFacService service;
 
-    @GetMapping("/PorId/{id}")
-    public ResponseEntity<XmlFac> listaPorId(@PathVariable BigInteger id){
+    @GetMapping("/PorId/{id}/{empresa}/porEmpresa")
+    public ResponseEntity<XmlFac> listaPorId(@PathVariable BigInteger id, @PathVariable Long empresa){
         try {
-            XmlFac xml=service.porId(id);
+            XmlFac xml=service.porIdYEmpresa(id,empresa);
             if (xml==null){
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
@@ -41,17 +41,19 @@ public class XmlFacController {
         }
     }
 
-    @PutMapping("/actualizarError/{id}/{error}/")
-    public ResponseEntity<XmlFac> actualizarError(@PathVariable BigInteger id,@PathVariable String error){
+
+
+    @PutMapping("/actualizarError/{id}/{error}/{empresa}")
+    public ResponseEntity<XmlFac> actualizarError(@PathVariable BigInteger id,@PathVariable String error,@PathVariable Long empresa){
         try{
-            XmlFac xml=service.porId(id);
+            XmlFac xml=service.porIdYEmpresa(id,empresa);
             if (xml==null){
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
             xml.setXmlfError(error);
             //service.guardar(xml);
             service.actualizarPorComprobante(xml.getXmlfCcoComproba(), error,xml.getXmlfEmpresa());
-            XmlFac xmlActualizado=service.porId(id);
+            XmlFac xmlActualizado=service.porIdYEmpresa(id,empresa);
             return ResponseEntity.ok(xmlActualizado);
         }catch (Exception e){
             LOG.error(e.getMessage());

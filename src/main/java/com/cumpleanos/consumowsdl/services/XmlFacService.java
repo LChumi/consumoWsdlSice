@@ -11,7 +11,8 @@ import java.math.BigInteger;
 
 public interface XmlFacService {
 
-    public XmlFac porId(BigInteger id);
-    public XmlFac guardar(XmlFac xmlFac);
-    public void actualizarPorComprobante(BigInteger id,String error,Long empresa);
+    XmlFac guardar(XmlFac xmlFac);
+    void actualizarPorComprobante(BigInteger id,String error,Long empresa);
+    XmlFac porIdYEmpresa(BigInteger id, Long empresa);
+
 }
