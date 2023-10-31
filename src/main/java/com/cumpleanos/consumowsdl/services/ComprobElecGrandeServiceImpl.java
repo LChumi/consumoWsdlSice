@@ -34,4 +34,9 @@ public class ComprobElecGrandeServiceImpl implements ComprobElecGrandeService {
         return repository.findByXmlf_clave(clave);
     }
 
+    @Override
+    public List<ComprobElecGrande> listaPorEmpresa(Long empresa) {
+        return repository.findAllByXmlf_empresa(empresa);
+    }
+
 }

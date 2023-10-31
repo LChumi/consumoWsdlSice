@@ -18,6 +18,7 @@ import java.math.BigInteger;
 
 @RestController
 @RequestMapping("/xmlFac")
+@CrossOrigin("*")
 public class XmlFacController {
 
     private final static Logger LOG = LoggerFactory.getLogger(XmlFacController.class);

@@ -1,7 +1,6 @@
 package com.cumpleanos.consumowsdl.controller;
 
 import com.cumpleanos.consumowsdl.client.SoapClient;
-import com.cumpleanos.consumowsdl.cron.AutomatizacionWsdlScheduler;
 import com.cumpleanos.consumowsdl.models.modelsxml.Autorizaciones;
 import com.cumpleanos.consumowsdl.models.modelsxml.Comprobante;
 import com.cumpleanos.consumowsdl.models.modelsxml.Data;
@@ -20,6 +19,7 @@ import java.io.StringReader;
 
 @RestController
 @RequestMapping("/apiWsdl")
+@CrossOrigin("*")
 public class SoapController {
 
     private final static Logger LOG = LoggerFactory.getLogger(SoapController.class);

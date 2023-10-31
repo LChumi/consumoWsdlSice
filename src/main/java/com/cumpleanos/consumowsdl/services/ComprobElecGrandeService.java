@@ -11,6 +11,7 @@ public interface ComprobElecGrandeService {
     ComprobElecGrande porCco(BigInteger id);
     ComprobElecGrande porCcoYEmpresa(BigInteger id,Long empresa);
     ComprobElecGrande porClave(String clave);
+    List<ComprobElecGrande> listaPorEmpresa(Long empresa);
 
 
 }

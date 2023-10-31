@@ -18,6 +18,7 @@ import java.math.BigInteger;
 
 @RestController
 @RequestMapping("/ccomfac")
+@CrossOrigin("*")
 public class CComfacController {
 
     private final static Logger LOG = LoggerFactory.getLogger(CComfacController.class);
