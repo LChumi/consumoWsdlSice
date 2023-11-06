@@ -1,5 +1,6 @@
 package com.cumpleanos.consumowsdl.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.hibernate.annotations.Immutable;
 import org.hibernate.annotations.Subselect;
@@ -18,6 +19,7 @@ public class ComprobElecGrande {
 
     @Id
     @Column(name = "CCO_CODIGO")
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     private BigInteger cco_codigo;
 
     @Column(name = "XMLF_COMPROBANTE")

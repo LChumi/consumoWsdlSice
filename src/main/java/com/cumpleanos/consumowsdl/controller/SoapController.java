@@ -5,6 +5,7 @@ import com.cumpleanos.consumowsdl.models.modelsxml.Autorizaciones;
 import com.cumpleanos.consumowsdl.models.modelsxml.Comprobante;
 import com.cumpleanos.consumowsdl.models.modelsxml.Data;
 import com.cumpleanos.consumowsdl.wsdl.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,8 +94,8 @@ public class SoapController {
             Unmarshaller unmarshaller= jaxbContext.createUnmarshaller();
 
             Data data= (Data) unmarshaller.unmarshal(new StringReader(xmlResponse));
-
-            return ResponseEntity.ok(data.getEstado());
+            String jsonResponse= new ObjectMapper().writeValueAsString(data.getEstado());//convertir a json
+            return ResponseEntity.ok(jsonResponse);
         }catch (Exception e){
             LOG.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -165,7 +166,8 @@ public class SoapController {
             }
 
             if (responseObject!= null){
-                return ResponseEntity.ok(respuesta);
+                String jsonResponse= new ObjectMapper().writeValueAsString(respuesta);//convertir a json
+                return ResponseEntity.ok(jsonResponse);
             }else {
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }

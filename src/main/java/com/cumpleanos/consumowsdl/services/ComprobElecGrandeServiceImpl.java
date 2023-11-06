@@ -16,7 +16,7 @@ public class ComprobElecGrandeServiceImpl implements ComprobElecGrandeService {
 
     @Override
     public List<ComprobElecGrande> listar() {
-        return repository.findAll();
+        return repository.findAllByCco_fecha();
     }
 
     @Override

@@ -10,10 +10,10 @@ import java.util.List;
 
 public interface ComprobElecGrandeRepository extends JpaRepository<ComprobElecGrande,String> {
 
-    @Query(value = "SELECT V FROM ComprobElecGrande V ")
-    List<ComprobElecGrande> findAll();
+    @Query(value = "SELECT V FROM ComprobElecGrande V WHERE V.cco_fecha >= current_date - 90 ")
+    List<ComprobElecGrande> findAllByCco_fecha();
 
-    @Query(value = "SELECT V FROM ComprobElecGrande V WHERE V.xmlf_empresa=:empresa")
+    @Query(value = "SELECT V FROM ComprobElecGrande V WHERE V.xmlf_empresa=:empresa and V.cco_fecha >= current_date - 90")
     List<ComprobElecGrande> findAllByXmlf_empresa(Long empresa);
 
     @Query(value = "SELECT  V FROM ComprobElecGrande V WHERE V.cco_codigo=:id AND V.xmlf_empresa=:empresa ")
