@@ -107,7 +107,7 @@ public class ComprobElecGrandeController {
         }
     }
 
-    @PostMapping(value = "/verXml/{cco}/{empresa}",produces = MediaType.APPLICATION_XML_VALUE)
+    @GetMapping(value = "/verXml/{cco}/{empresa}",produces = MediaType.APPLICATION_XML_VALUE)
     public ResponseEntity<?> getXml(@PathVariable BigInteger cco, @PathVariable Long empresa){
         try{
             ComprobElecGrande comp= service.porCcoYEmpresa(cco,empresa);
