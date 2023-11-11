@@ -32,8 +32,8 @@ public class SoapController {
     public ResponseEntity<?> recibirComprobante(@RequestBody String xml, @RequestParam String email, @RequestParam int tipo){
         try {
             RecibirComprobanteResponse response=soapClient.getRecibirComprobanteResponse(xml, email, tipo);
-
-            return ResponseEntity.ok(response.getRecibirComprobanteResult());
+            String jsonResponse= new ObjectMapper().writeValueAsString(response.getRecibirComprobanteResult());//convertir a json
+            return ResponseEntity.ok(jsonResponse);
         }catch (Exception e){
             LOG.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -44,8 +44,8 @@ public class SoapController {
     public ResponseEntity<?> verificarComprobante(@RequestParam String clave){
         try{
             VerificarComprobanteResponse response= soapClient.getVerificarComprobanteResponse(clave);
-
-            return  ResponseEntity.ok(response.getVerificarComprobanteResult());
+            String jsonResponse= new ObjectMapper().writeValueAsString(response.getVerificarComprobanteResult());//convertir a json
+            return  ResponseEntity.ok(jsonResponse);
         }catch (Exception e){
             LOG.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -56,8 +56,8 @@ public class SoapController {
     public ResponseEntity<?> obtieneAutorizacion(@RequestParam String clave){
         try{
             ObtieneAutorizacionResponse response= soapClient.getObtieneAutorizacion(clave);
-
-            return  ResponseEntity.ok(response.getObtieneAutorizacionResult());
+            String jsonResponse= new ObjectMapper().writeValueAsString(response.getObtieneAutorizacionResult());//convertir a json
+            return  ResponseEntity.ok(jsonResponse);
         }catch (Exception e){
             LOG.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
