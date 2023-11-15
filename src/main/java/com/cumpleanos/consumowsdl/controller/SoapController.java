@@ -36,7 +36,7 @@ public class SoapController {
             return ResponseEntity.ok(jsonResponse);
         }catch (Exception e){
             LOG.error(e.getMessage());
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
 
@@ -48,7 +48,7 @@ public class SoapController {
             return  ResponseEntity.ok(jsonResponse);
         }catch (Exception e){
             LOG.error(e.getMessage());
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }
     }
 
@@ -60,7 +60,7 @@ public class SoapController {
             return  ResponseEntity.ok(jsonResponse);
         }catch (Exception e){
             LOG.error(e.getMessage());
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }
     }
 
@@ -98,7 +98,7 @@ public class SoapController {
             return ResponseEntity.ok(jsonResponse);
         }catch (Exception e){
             LOG.error(e.getMessage());
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(e.getMessage());
         }
     }
 
@@ -169,12 +169,12 @@ public class SoapController {
                 String jsonResponse= new ObjectMapper().writeValueAsString(respuesta);//convertir a json
                 return ResponseEntity.ok(jsonResponse);
             }else {
-                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+                return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
             }
 
         }catch (Exception e){
             LOG.error(e.getMessage());
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }
     }
 
