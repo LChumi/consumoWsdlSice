@@ -11,6 +11,7 @@ import com.cumpleanos.consumowsdl.security.JwtUtilService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -39,15 +40,20 @@ public class AuthenticationController {
     public ResponseEntity<TokenInfo> login(@RequestBody AuthenticationReq usuario){
         LOG.info("Autenticando al usuario "+usuario.getUsuario());
 
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(usuario.getUsuario(),
-                        usuario.getClave()));
+        try{
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(usuario.getUsuario(),
+                            usuario.getClave()));
 
-        final UserDetails userDetails=userDetailsService.loadUserByUsername(usuario.getUsuario());
+            final UserDetails userDetails=userDetailsService.loadUserByUsername(usuario.getUsuario());
 
-        final String jwt = jwtUtilService.generateToken(userDetails);
+            final String jwt = jwtUtilService.generateToken(userDetails);
 
-        return ResponseEntity.ok(new TokenInfo(jwt));
+            return ResponseEntity.ok(new TokenInfo(jwt));
+        }catch (Exception e){
+
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
 
