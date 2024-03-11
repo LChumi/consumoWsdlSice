@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 @Service
 public class JwtUtilService {
 
-    private static final String JWT_SECRET_KEY= "TExBVkVfU0VDUkVUQV9DVU1QTEU=";
+    private static final String JWT_SECRET_KEY= "TExBVkVfU0VDUkVUQV9DVU1QTEU=";//LLAVE_SECRETA_CUMPLE
 
     public static final long JWT_TOKEN_VALIDITY = 1000 * 60 * 60 * (long) 8; // 8 Horas
     public String extractUsername(String token) {

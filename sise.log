@@ -1,0 +1,252 @@
+2023-12-26 15:32:13.077  INFO 16908 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.9 on LChumi with PID 16908 (C:\Users\Luis\Documents\Workspace\consumowsdl\target\classes started by Luis in C:\Users\Luis\Documents\Workspace\consumowsdl)
+2023-12-26 15:32:13.078 DEBUG 16908 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
+2023-12-26 15:32:13.079  INFO 16908 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-12-26 15:32:13.132  INFO 16908 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Luis\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Luis/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-12-26 15:32:13.132  INFO 16908 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-12-26 15:32:13.133  INFO 16908 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-12-26 15:32:13.838  INFO 16908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-26 15:32:13.920  INFO 16908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 3 JPA repository interfaces.
+2023-12-26 15:32:14.177  INFO 16908 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$c4899a49] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-26 15:32:14.209  INFO 16908 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2023-12-26 15:32:14.458  INFO 16908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
+2023-12-26 15:32:14.465  INFO 16908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-26 15:32:14.466  INFO 16908 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-12-26 15:32:14.539  INFO 16908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-26 15:32:14.540  INFO 16908 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1407 ms
+2023-12-26 15:32:14.613 DEBUG 16908 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
+2023-12-26 15:32:14.828  INFO 16908 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-26 15:32:14.902  INFO 16908 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-12-26 15:32:15.154  INFO 16908 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-26 15:32:15.256  INFO 16908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-26 15:32:15.566  INFO 16908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-26 15:32:15.582  INFO 16908 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2023-12-26 15:32:16.218  INFO 16908 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-26 15:32:16.228  INFO 16908 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-26 15:32:16.769  INFO 16908 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2023-12-26 15:32:16.957  WARN 16908 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-26 15:32:17.102  INFO 16908 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@31ac6c72, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@781c2c8a, org.springframework.security.web.context.SecurityContextPersistenceFilter@26bec08f, org.springframework.security.web.header.HeaderWriterFilter@7bd25fc2, org.springframework.web.filter.CorsFilter@7ee43dba, org.springframework.security.web.authentication.logout.LogoutFilter@1b9c97de, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@4e16e3b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@156bdc31, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e7e0f9e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@143dbd7d, org.springframework.security.web.session.SessionManagementFilter@27d25938, org.springframework.security.web.access.ExceptionTranslationFilter@72207b49, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6b7073f1]
+2023-12-26 15:32:17.315  INFO 16908 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-12-26 15:32:17.347  INFO 16908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
+2023-12-26 15:32:17.360  INFO 16908 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 4.613 seconds (JVM running for 5.252)
+2023-12-26 15:35:29.531  INFO 16908 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-26 15:35:29.533  INFO 16908 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-26 15:35:29.592  INFO 16908 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-26 15:37:50.692  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.9 on LChumi with PID 10912 (C:\Users\Luis\Documents\Workspace\consumowsdl\target\classes started by Luis in C:\Users\Luis\Documents\Workspace\consumowsdl)
+2023-12-26 15:37:50.693 DEBUG 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
+2023-12-26 15:37:50.694  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-12-26 15:37:50.754  INFO 10912 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Luis\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Luis/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-12-26 15:37:50.755  INFO 10912 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-12-26 15:37:50.755  INFO 10912 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-12-26 15:37:51.377  INFO 10912 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-26 15:37:51.433  INFO 10912 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
+2023-12-26 15:37:51.672  INFO 10912 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b6a4103e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-26 15:37:51.707  INFO 10912 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2023-12-26 15:37:51.929  INFO 10912 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
+2023-12-26 15:37:51.937  INFO 10912 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-26 15:37:51.937  INFO 10912 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-12-26 15:37:52.011  INFO 10912 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-26 15:37:52.012  INFO 10912 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1257 ms
+2023-12-26 15:37:52.053 DEBUG 10912 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
+2023-12-26 15:37:52.178  INFO 10912 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-26 15:37:52.212  INFO 10912 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-12-26 15:37:52.339  INFO 10912 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-26 15:37:52.418  INFO 10912 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-26 15:37:52.709  INFO 10912 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-26 15:37:52.728  INFO 10912 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2023-12-26 15:37:53.220  INFO 10912 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-26 15:37:53.228  INFO 10912 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-26 15:37:53.710  INFO 10912 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2023-12-26 15:37:53.891  WARN 10912 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-26 15:37:54.039  INFO 10912 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@63059e91, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78863fe2, org.springframework.security.web.context.SecurityContextPersistenceFilter@79fc0411, org.springframework.security.web.header.HeaderWriterFilter@66057a8b, org.springframework.web.filter.CorsFilter@61bcf853, org.springframework.security.web.authentication.logout.LogoutFilter@48f09aff, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@26ba0ce1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7fe2b894, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27d25938, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e129437, org.springframework.security.web.session.SessionManagementFilter@6f6c3bc7, org.springframework.security.web.access.ExceptionTranslationFilter@7d1c86f6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3499da27]
+2023-12-26 15:37:54.251  INFO 10912 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-12-26 15:37:54.284  INFO 10912 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
+2023-12-26 15:37:54.297  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 3.964 seconds (JVM running for 4.891)
+2023-12-26 15:38:17.695  INFO 10912 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 120 class path changes (0 additions, 119 deletions, 1 modification)
+2023-12-26 15:38:17.727  INFO 10912 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-26 15:38:17.745  INFO 10912 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-26 15:38:17.756  INFO 10912 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-26 15:38:17.845  INFO 10912 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-26 15:38:17.980  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.9 on LChumi with PID 10912 (C:\Users\Luis\Documents\Workspace\consumowsdl\target\classes started by Luis in C:\Users\Luis\Documents\Workspace\consumowsdl)
+2023-12-26 15:38:17.981 DEBUG 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
+2023-12-26 15:38:17.982  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-12-26 15:38:18.567  INFO 10912 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-26 15:38:18.571  INFO 10912 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2023-12-26 15:38:18.746  INFO 10912 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b6a4103e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-26 15:38:18.749  INFO 10912 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2023-12-26 15:38:18.860  INFO 10912 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
+2023-12-26 15:38:18.862  INFO 10912 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-26 15:38:18.862  INFO 10912 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-12-26 15:38:18.908  INFO 10912 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-26 15:38:18.909  INFO 10912 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 921 ms
+2023-12-26 15:38:18.982  INFO 10912 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-26 15:38:18.992  INFO 10912 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-12-26 15:38:19.082  INFO 10912 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-12-26 15:38:19.082  INFO 10912 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2023-12-26 15:38:19.101  INFO 10912 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-26 15:38:19.103  INFO 10912 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-26 15:38:19.171  WARN 10912 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-26 15:38:19.488  WARN 10912 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: e5a9d3d8-ad4b-45d8-a60a-d9755839c7e6
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-12-26 15:38:19.532  INFO 10912 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@770373b8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c6e56cd, org.springframework.security.web.context.SecurityContextPersistenceFilter@4039fd21, org.springframework.security.web.header.HeaderWriterFilter@28272e8e, org.springframework.security.web.csrf.CsrfFilter@772070bc, org.springframework.security.web.authentication.logout.LogoutFilter@29e6f8fc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5b803766, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5170c5e3, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@246ec957, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@12a0cbb1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@325c08d5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@239e134e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30077328, org.springframework.security.web.session.SessionManagementFilter@34e8ce90, org.springframework.security.web.access.ExceptionTranslationFilter@6f83a299, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1200e8d8]
+2023-12-26 15:38:19.565  INFO 10912 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-12-26 15:38:19.582  INFO 10912 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
+2023-12-26 15:38:19.588  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 1.676 seconds (JVM running for 30.182)
+2023-12-26 15:38:19.597  INFO 10912 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter,org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   UserDetailsServiceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) found bean 'objectPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder,org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector,org.springframework.security.oauth2.client.registration.ClientRegistrationRepository,org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   TaskSchedulingAutoConfiguration#scheduledBeanLazyInitializationExcludeFilter:
+      Did not match:
+         - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) did not find any beans named org.springframework.context.annotation.internalScheduledAnnotationProcessor (OnBeanCondition)
+
+   TaskSchedulingAutoConfiguration#taskScheduler:
+      Did not match:
+         - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) did not find any beans named org.springframework.context.annotation.internalScheduledAnnotationProcessor (OnBeanCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2023-12-26 15:38:24.942  INFO 10912 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 119 class path changes (119 additions, 0 deletions, 0 modifications)
+2023-12-26 15:38:24.954  INFO 10912 --- [Thread-9] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-26 15:38:24.958  INFO 10912 --- [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-26 15:38:24.959  INFO 10912 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-12-26 15:38:25.012  INFO 10912 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-12-26 15:38:25.148  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.9 on LChumi with PID 10912 (C:\Users\Luis\Documents\Workspace\consumowsdl\target\classes started by Luis in C:\Users\Luis\Documents\Workspace\consumowsdl)
+2023-12-26 15:38:25.148 DEBUG 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
+2023-12-26 15:38:25.148  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-12-26 15:38:25.610  INFO 10912 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-26 15:38:25.651  INFO 10912 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 3 JPA repository interfaces.
+2023-12-26 15:38:25.787  INFO 10912 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b6a4103e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-26 15:38:25.793  INFO 10912 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2023-12-26 15:38:25.928  INFO 10912 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
+2023-12-26 15:38:25.930  INFO 10912 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-26 15:38:25.933  INFO 10912 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-12-26 15:38:25.978  INFO 10912 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-26 15:38:25.978  INFO 10912 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 825 ms
+2023-12-26 15:38:26.015 DEBUG 10912 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
+2023-12-26 15:38:26.088  INFO 10912 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-26 15:38:26.096  INFO 10912 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-12-26 15:38:26.211  INFO 10912 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-12-26 15:38:26.213  INFO 10912 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2023-12-26 15:38:26.379  INFO 10912 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-26 15:38:26.379  INFO 10912 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-26 15:38:26.841  INFO 10912 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2023-12-26 15:38:26.929  WARN 10912 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-26 15:38:27.059  INFO 10912 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2359ef27, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@555c7b44, org.springframework.security.web.context.SecurityContextPersistenceFilter@77495f8b, org.springframework.security.web.header.HeaderWriterFilter@1796ca00, org.springframework.web.filter.CorsFilter@f73e39f, org.springframework.security.web.authentication.logout.LogoutFilter@4baf1f5a, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@626ac8fd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75e405f7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54831781, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@67a11d1c, org.springframework.security.web.session.SessionManagementFilter@3d83f0ab, org.springframework.security.web.access.ExceptionTranslationFilter@2700bee, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7fec5478]
+2023-12-26 15:38:27.162  INFO 10912 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-12-26 15:38:27.176  INFO 10912 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
+2023-12-26 15:38:27.181  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 2.105 seconds (JVM running for 37.775)
+2023-12-26 15:38:27.182  INFO 10912 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   TaskSchedulingAutoConfiguration#scheduledBeanLazyInitializationExcludeFilter matched:
+      - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) found bean 'org.springframework.context.annotation.internalScheduledAnnotationProcessor' (OnBeanCondition)
+
+   TaskSchedulingAutoConfiguration#taskScheduler matched:
+      - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) found bean 'org.springframework.context.annotation.internalScheduledAnnotationProcessor'; @ConditionalOnMissingBean (types: org.springframework.scheduling.annotation.SchedulingConfigurer,org.springframework.scheduling.TaskScheduler,java.util.concurrent.ScheduledExecutorService; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter,org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' web; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder,org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector,org.springframework.security.oauth2.client.registration.ClientRegistrationRepository,org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager and found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' userDetailsServiceImpl (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2023-12-26 15:39:33.957  INFO 10912 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-26 15:39:33.958  INFO 10912 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-12-26 15:39:34.033  INFO 10912 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-12-26 15:39:37.551  INFO 12088 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.9 on LChumi with PID 12088 (C:\Users\Luis\Documents\Workspace\consumowsdl\target\classes started by Luis in C:\Users\Luis\Documents\Workspace\consumowsdl)
+2023-12-26 15:39:37.552 DEBUG 12088 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
+2023-12-26 15:39:37.552  INFO 12088 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-12-26 15:39:37.600  INFO 12088 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Luis\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Luis/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-12-26 15:39:37.600  INFO 12088 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-12-26 15:39:37.600  INFO 12088 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-12-26 15:39:38.285  INFO 12088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-26 15:39:38.346  INFO 12088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 3 JPA repository interfaces.
+2023-12-26 15:39:38.622  INFO 12088 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$8b0a6dd7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-26 15:39:38.656  INFO 12088 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2023-12-26 15:39:38.881  INFO 12088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
+2023-12-26 15:39:38.888  INFO 12088 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-26 15:39:38.889  INFO 12088 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-12-26 15:39:38.962  INFO 12088 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-26 15:39:38.962  INFO 12088 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1362 ms
+2023-12-26 15:39:39.005 DEBUG 12088 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
+2023-12-26 15:39:39.135  INFO 12088 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-26 15:39:39.174  INFO 12088 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-12-26 15:39:39.302  INFO 12088 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-26 15:39:39.397  INFO 12088 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-26 15:39:39.694  INFO 12088 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-26 15:39:39.709  INFO 12088 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2023-12-26 15:39:40.308  INFO 12088 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-26 15:39:40.316  INFO 12088 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-26 15:39:40.837  INFO 12088 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2023-12-26 15:39:41.036  WARN 12088 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-26 15:39:41.194  INFO 12088 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@781c2c8a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ee43dba, org.springframework.security.web.context.SecurityContextPersistenceFilter@7fe2b894, org.springframework.security.web.header.HeaderWriterFilter@3e709dec, org.springframework.web.filter.CorsFilter@143dbd7d, org.springframework.security.web.authentication.logout.LogoutFilter@2ede43e, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@552cf380, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3e971d5f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c72e78d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@46209c74, org.springframework.security.web.session.SessionManagementFilter@2d5ea6c6, org.springframework.security.web.access.ExceptionTranslationFilter@66057a8b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1f70759e]
+2023-12-26 15:39:41.429  INFO 12088 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-12-26 15:39:41.458  INFO 12088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
+2023-12-26 15:39:41.471  INFO 12088 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 4.253 seconds (JVM running for 4.999)
+2023-12-26 15:40:29.777  INFO 12088 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-26 15:40:29.779  INFO 12088 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-26 15:40:29.851  INFO 12088 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
