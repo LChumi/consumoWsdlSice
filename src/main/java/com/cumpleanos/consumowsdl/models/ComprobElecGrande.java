@@ -2,20 +2,18 @@ package com.cumpleanos.consumowsdl.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-import org.hibernate.annotations.Immutable;
-import org.hibernate.annotations.Subselect;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.math.BigInteger;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
-@Immutable
-@Subselect("SELECT XMLF_COMPROBANTE,CCO_CODIGO, CCO_FECHA, XMLF_EMPRESA, XMLF_MENSAJE, XMLF_CARACTER, XMLF_ERROR, XMLF_AUTORIZACION, XMLF_CLAVE, XML_TIPO_COMPROBANTE, CLI_MAIL, XMLF_SIZE FROM COMPROB_ELEC_GRANDE_V")
+@Table(name = "COMPROB_ELEC_GRANDE_V")
 @Data
-public class ComprobElecGrande {
+public class ComprobElecGrande implements Comparable<ComprobElecGrande>{
 
     @Id
     @Column(name = "CCO_CODIGO")
@@ -26,7 +24,7 @@ public class ComprobElecGrande {
     private String xmlf_comprobante;
 
     @Column(name = "CCO_FECHA")
-    private Date cco_fecha;
+    private LocalDate cco_fecha;
 
     @Column(name = "XMLF_EMPRESA")
     private Long xmlf_empresa;
@@ -55,4 +53,11 @@ public class ComprobElecGrande {
     @Column(name = "XMLF_CARACTER")
     private String xmlf_caracter;
 
+    @Override
+    public int compareTo(ComprobElecGrande o) {
+        if (o == null){
+            throw  new NullPointerException("No se puede comparar objeto nulo");
+        }
+        return this.cco_fecha.compareTo(o.cco_fecha);
+    }
 }

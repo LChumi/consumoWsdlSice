@@ -10,12 +10,12 @@ import com.cumpleanos.consumowsdl.models.modelsxml.Data;
 import com.cumpleanos.consumowsdl.repository.ProcedureOracleRepository;
 import com.cumpleanos.consumowsdl.services.CComfacService;
 import com.cumpleanos.consumowsdl.services.ComprobElecGrandeService;
+import com.cumpleanos.consumowsdl.services.SpringConsumoService;
 import com.cumpleanos.consumowsdl.services.XmlFacService;
 import com.cumpleanos.consumowsdl.wsdl.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -28,40 +28,39 @@ import java.util.List;
 
 
 @Component
+@RequiredArgsConstructor
+@Slf4j
 public class AutomatizacionWsdlScheduler {
 
-    private final static Logger LOG = LoggerFactory.getLogger(AutomatizacionWsdlScheduler.class);
     private final SoapClient soapClient;
     private final ComprobElecGrandeService comprobanteService;
     private final ProcedureOracleRepository oracleRepository;
     private final CComfacService cComfacService;
     private final XmlFacService xmlFacService;
+    private final SpringConsumoService consumoService;
 
-    @Autowired
-    public AutomatizacionWsdlScheduler(SoapClient soapClient, ComprobElecGrandeService comprobanteService, ProcedureOracleRepository oracleRepository, CComfacService cComfacService, XmlFacService xmlFacService) {
-        this.soapClient = soapClient;
-        this.comprobanteService = comprobanteService;
-        this.oracleRepository = oracleRepository;
-        this.cComfacService = cComfacService;
-        this.xmlFacService = xmlFacService;
-    }
+    
 
     @Scheduled(cron = "${cron.expression.30min}")
     private void gestionSise(){
-        LOG.info(" ------------- Iniciando proceso ------------------- ");
+        log.info(" ------------- Iniciando proceso ------------------- ");
         try {
             List<ComprobElecGrande> comprobantes=comprobanteService.listar();
             if (!comprobantes.isEmpty()){
                 for (ComprobElecGrande c:comprobantes){
-                    LOG.info(c.getXmlf_comprobante()+" cco: "+c.getCco_codigo()+" empresa: "+c.getXmlf_empresa() +" clave "+c.getXmlf_clave());
+                    log.info(c.getXmlf_comprobante()+" cco: "+c.getCco_codigo()+" empresa: "+c.getXmlf_empresa() +" clave "+c.getXmlf_clave());
                     if (c.getXmlf_caracter()==null){
                         creaXmlEnvia(c);
                     } else {
                         String autorizacionEstado=obtieneAuth(c);
+                        String response = consumoService.firmarXml(c.getXmlf_caracter());
+                        System.out.println("------------------------------------------------");
+                        log.info(response);
+                        System.out.println("------------------------------------------------");
                         if (autorizacionEstado.equals(c.getXmlf_clave())){
                             //guardar en BD -> ccomfac
                             guardarAutorizacion(c.getCco_codigo(),c.getXmlf_empresa(),autorizacionEstado);
-                            LOG.warn("CCOMFAC actualizado: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa());
+                            log.warn("CCOMFAC actualizado: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa());
                         } else if (autorizacionEstado.contains("NO COMPROBANTE") || autorizacionEstado.contains("SIN AUTORIZACION")) {
                             if (autorizacionEstado.contains("NO COMPROBANTE")) {
                                 enviarXml(c);
@@ -72,7 +71,7 @@ public class AutomatizacionWsdlScheduler {
                 }
             }
         }catch (Exception e){
-            LOG.error("Ocurrio un error a nivel general: "+e.getMessage());
+            log.error("Ocurrio un error a nivel general: "+e.getMessage());
         }
     }
 
@@ -80,7 +79,7 @@ public class AutomatizacionWsdlScheduler {
         try {
             oracleRepository.crearXml(c.getXmlf_empresa(), c.getCco_codigo().toString(),c.getXml_tipoComprobante());
         }catch (Exception e){
-            LOG.error("Ocurrio un problema al crear xml: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
+            log.error("Ocurrio un problema al crear xml: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
         }
     }
 
@@ -89,7 +88,7 @@ public class AutomatizacionWsdlScheduler {
             ObtieneAutorizacionResponse autorizacion=soapClient.getObtieneAutorizacion(c.getXmlf_clave());
             return autorizacion.getObtieneAutorizacionResult();
         }catch (Exception e){
-            LOG.error("Ocurrio un problema al obtener autorizacion: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
+            log.error("Ocurrio un problema al obtener autorizacion: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
             return "Error";
         }
     }
@@ -99,7 +98,7 @@ public class AutomatizacionWsdlScheduler {
             RecibirComprobanteResponse recibe= soapClient.getRecibirComprobanteResponse(c.getXmlf_caracter(), c.getCli_mail(), c.getXml_tipoComprobante());
             return recibe.getRecibirComprobanteResult();
         }catch (Exception e){
-            LOG.error("Ocurrio un problema al enviar Xml: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
+            log.error("Ocurrio un problema al enviar Xml: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
             return "Error";
         }
     }
@@ -109,7 +108,7 @@ public class AutomatizacionWsdlScheduler {
             VerificarComprobanteResponse verifica= soapClient.getVerificarComprobanteResponse(c.getXmlf_clave());
             return verifica.getVerificarComprobanteResult();
         }catch (Exception e){
-            LOG.error("Ocurrio un problema al verificar comprobante: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
+            log.error("Ocurrio un problema al verificar comprobante: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
             return "Error";
         }
     }
@@ -127,11 +126,11 @@ public class AutomatizacionWsdlScheduler {
                 Data data= (Data) unmarshaller.unmarshal(new StringReader(xmlResponse));
                 return data.getEstado();
             }catch (JAXBException e){
-                LOG.error("Ocurrio un problema al obtener estado: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
+                log.error("Ocurrio un problema al obtener estado: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
                 return "Error";
             }
         }catch (Exception e){
-            LOG.error("Ocurrio un problema al obtener estado: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
+            log.error("Ocurrio un problema al obtener estado: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
             return "Error";
         }
     }
@@ -156,9 +155,9 @@ public class AutomatizacionWsdlScheduler {
                     return comprobante.getMensajes().getMensaje().getInformacionAdicional();
                 }
         }catch (JAXBException e){
-                LOG.error(c.getXmlf_comprobante()+" "+e.getMessage());
+                log.error(c.getXmlf_comprobante()+" "+e.getMessage());
         }catch (Exception e){
-            LOG.error("Ocurrio un problema al obtener respuesta: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
+            log.error("Ocurrio un problema al obtener respuesta: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
         }
         return "Error";
     }
@@ -168,7 +167,7 @@ public class AutomatizacionWsdlScheduler {
             creaXml(c);
             enviarXml(c);
         }catch (Exception e){
-            LOG.error("Ocurrio un problema al crear y enviar xml: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
+            log.error("Ocurrio un problema al crear y enviar xml: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
         }
     }
 
@@ -181,13 +180,13 @@ public class AutomatizacionWsdlScheduler {
             } else if (estado.contains("Enviado")) {
                 //guardar en BD -> xmlfac
                 guardarErrorXmlFac(c.getCco_codigo(),c.getXmlf_empresa(),obtenerRespuesta(c));
-                LOG.warn("XMLFAC actualizado: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa());
+                log.warn("XMLFAC actualizado: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa());
             }else{
                 obtenerRespuesta(c);
                 enviarXml(c);
             }
         }catch (Exception e){
-            LOG.error("Ocurrio un problema al verificar y procesar  comprobante: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
+            log.error("Ocurrio un problema al verificar y procesar  comprobante: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
         }
     }
 
@@ -198,7 +197,7 @@ public class AutomatizacionWsdlScheduler {
                 xmlFacService.actualizarPorComprobante(xml.getXmlfCcoComproba(),error,xml.getXmlfEmpresa());
             }
         }catch (Exception e){
-            LOG.error("Ocurrio un problema al guardar XMLFAC: "+" cco: "+cco+" en la empresa: "+empresa+" Error "+e.getMessage());
+            log.error("Ocurrio un problema al guardar XMLFAC: "+" cco: "+cco+" en la empresa: "+empresa+" Error "+e.getMessage());
         }
     }
 
@@ -209,7 +208,7 @@ public class AutomatizacionWsdlScheduler {
                 cComfacService.actualizarPorCcoEmpresa(cco, empresa, autorizacion);
             }
         }catch (Exception e){
-            LOG.error("Ocurrio un problema al guardar CCOMFAC: "+" cco: "+cco+" en la empresa: "+empresa+" Error "+e.getMessage());
+            log.error("Ocurrio un problema al guardar CCOMFAC: "+" cco: "+cco+" en la empresa: "+empresa+" Error "+e.getMessage());
         }
     }
 }
