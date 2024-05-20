@@ -22,15 +22,17 @@ public class SpringConsumoService {
 
     private final RestTemplate restTemplate;
 
-    public String firmarXml(String xml){
-        //en caso de poner una variable mas se agrega baseSpringUrl+/ ambiente
+    public String firmarXml(String xml,String ambiente,String correo){
+
+        String url = baseSpringUrl + ambiente + "?correo=" + correo;
+
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_XML);
 
         HttpEntity<String> entity = new HttpEntity<String>(xml, headers);
 
         try {
-            ResponseEntity<String> response = restTemplate.postForEntity(baseSpringUrl, entity, String.class);
+            ResponseEntity<String> response = restTemplate.postForEntity(url, entity, String.class);
             if (response.getStatusCode().is2xxSuccessful()){
                 return response.getBody();
             } else {
@@ -38,7 +40,7 @@ public class SpringConsumoService {
             }
         }catch (HttpServerErrorException e){
             log.error("ERROR: al enviar Xml {}", e.getMessage(), e);
-            throw e;
+            return "Ocurrio un error";
         }
     }
 

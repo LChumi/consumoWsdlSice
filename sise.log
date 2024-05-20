@@ -1,836 +1,159 @@
-2023-12-26 15:32:13.077  INFO 16908 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.9 on LChumi with PID 16908 (C:\Users\Luis\Documents\Workspace\consumowsdl\target\classes started by Luis in C:\Users\Luis\Documents\Workspace\consumowsdl)
-2023-12-26 15:32:13.078 DEBUG 16908 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2023-12-26 15:32:13.079  INFO 16908 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2023-12-26 15:32:13.132  INFO 16908 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Luis\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Luis/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
-2023-12-26 15:32:13.132  INFO 16908 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-12-26 15:32:13.133  INFO 16908 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-12-26 15:32:13.838  INFO 16908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-12-26 15:32:13.920  INFO 16908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 3 JPA repository interfaces.
-2023-12-26 15:32:14.177  INFO 16908 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$c4899a49] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2023-12-26 15:32:14.209  INFO 16908 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2023-12-26 15:32:14.458  INFO 16908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2023-12-26 15:32:14.465  INFO 16908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-12-26 15:32:14.466  INFO 16908 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2023-12-26 15:32:14.539  INFO 16908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-12-26 15:32:14.540  INFO 16908 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1407 ms
-2023-12-26 15:32:14.613 DEBUG 16908 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
-2023-12-26 15:32:14.828  INFO 16908 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-12-26 15:32:14.902  INFO 16908 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-12-26 15:32:15.154  INFO 16908 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-12-26 15:32:15.256  INFO 16908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-12-26 15:32:15.566  INFO 16908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-12-26 15:32:15.582  INFO 16908 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2023-12-26 15:32:16.218  INFO 16908 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-12-26 15:32:16.228  INFO 16908 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-12-26 15:32:16.769  INFO 16908 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
-2023-12-26 15:32:16.957  WARN 16908 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-12-26 15:32:17.102  INFO 16908 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@31ac6c72, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@781c2c8a, org.springframework.security.web.context.SecurityContextPersistenceFilter@26bec08f, org.springframework.security.web.header.HeaderWriterFilter@7bd25fc2, org.springframework.web.filter.CorsFilter@7ee43dba, org.springframework.security.web.authentication.logout.LogoutFilter@1b9c97de, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@4e16e3b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@156bdc31, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e7e0f9e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@143dbd7d, org.springframework.security.web.session.SessionManagementFilter@27d25938, org.springframework.security.web.access.ExceptionTranslationFilter@72207b49, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6b7073f1]
-2023-12-26 15:32:17.315  INFO 16908 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-12-26 15:32:17.347  INFO 16908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2023-12-26 15:32:17.360  INFO 16908 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 4.613 seconds (JVM running for 5.252)
-2023-12-26 15:35:29.531  INFO 16908 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-12-26 15:35:29.533  INFO 16908 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-12-26 15:35:29.592  INFO 16908 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-12-26 15:37:50.692  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.9 on LChumi with PID 10912 (C:\Users\Luis\Documents\Workspace\consumowsdl\target\classes started by Luis in C:\Users\Luis\Documents\Workspace\consumowsdl)
-2023-12-26 15:37:50.693 DEBUG 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2023-12-26 15:37:50.694  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2023-12-26 15:37:50.754  INFO 10912 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Luis\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Luis/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
-2023-12-26 15:37:50.755  INFO 10912 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-12-26 15:37:50.755  INFO 10912 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-12-26 15:37:51.377  INFO 10912 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-12-26 15:37:51.433  INFO 10912 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
-2023-12-26 15:37:51.672  INFO 10912 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b6a4103e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2023-12-26 15:37:51.707  INFO 10912 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2023-12-26 15:37:51.929  INFO 10912 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2023-12-26 15:37:51.937  INFO 10912 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-12-26 15:37:51.937  INFO 10912 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2023-12-26 15:37:52.011  INFO 10912 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-12-26 15:37:52.012  INFO 10912 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1257 ms
-2023-12-26 15:37:52.053 DEBUG 10912 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
-2023-12-26 15:37:52.178  INFO 10912 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-12-26 15:37:52.212  INFO 10912 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-12-26 15:37:52.339  INFO 10912 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-12-26 15:37:52.418  INFO 10912 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-12-26 15:37:52.709  INFO 10912 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-12-26 15:37:52.728  INFO 10912 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2023-12-26 15:37:53.220  INFO 10912 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-12-26 15:37:53.228  INFO 10912 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-12-26 15:37:53.710  INFO 10912 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
-2023-12-26 15:37:53.891  WARN 10912 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-12-26 15:37:54.039  INFO 10912 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@63059e91, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78863fe2, org.springframework.security.web.context.SecurityContextPersistenceFilter@79fc0411, org.springframework.security.web.header.HeaderWriterFilter@66057a8b, org.springframework.web.filter.CorsFilter@61bcf853, org.springframework.security.web.authentication.logout.LogoutFilter@48f09aff, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@26ba0ce1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7fe2b894, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27d25938, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e129437, org.springframework.security.web.session.SessionManagementFilter@6f6c3bc7, org.springframework.security.web.access.ExceptionTranslationFilter@7d1c86f6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3499da27]
-2023-12-26 15:37:54.251  INFO 10912 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-12-26 15:37:54.284  INFO 10912 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2023-12-26 15:37:54.297  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 3.964 seconds (JVM running for 4.891)
-2023-12-26 15:38:17.695  INFO 10912 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 120 class path changes (0 additions, 119 deletions, 1 modification)
-2023-12-26 15:38:17.727  INFO 10912 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-12-26 15:38:17.745  INFO 10912 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-12-26 15:38:17.756  INFO 10912 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-12-26 15:38:17.845  INFO 10912 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-12-26 15:38:17.980  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.9 on LChumi with PID 10912 (C:\Users\Luis\Documents\Workspace\consumowsdl\target\classes started by Luis in C:\Users\Luis\Documents\Workspace\consumowsdl)
-2023-12-26 15:38:17.981 DEBUG 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2023-12-26 15:38:17.982  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2023-12-26 15:38:18.567  INFO 10912 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-12-26 15:38:18.571  INFO 10912 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
-2023-12-26 15:38:18.746  INFO 10912 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b6a4103e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2023-12-26 15:38:18.749  INFO 10912 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2023-12-26 15:38:18.860  INFO 10912 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2023-12-26 15:38:18.862  INFO 10912 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-12-26 15:38:18.862  INFO 10912 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2023-12-26 15:38:18.908  INFO 10912 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-12-26 15:38:18.909  INFO 10912 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 921 ms
-2023-12-26 15:38:18.982  INFO 10912 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-12-26 15:38:18.992  INFO 10912 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2023-12-26 15:38:19.082  INFO 10912 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2023-12-26 15:38:19.082  INFO 10912 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2023-12-26 15:38:19.101  INFO 10912 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-12-26 15:38:19.103  INFO 10912 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-12-26 15:38:19.171  WARN 10912 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-12-26 15:38:19.488  WARN 10912 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: e5a9d3d8-ad4b-45d8-a60a-d9755839c7e6
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2023-12-26 15:38:19.532  INFO 10912 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@770373b8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c6e56cd, org.springframework.security.web.context.SecurityContextPersistenceFilter@4039fd21, org.springframework.security.web.header.HeaderWriterFilter@28272e8e, org.springframework.security.web.csrf.CsrfFilter@772070bc, org.springframework.security.web.authentication.logout.LogoutFilter@29e6f8fc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5b803766, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5170c5e3, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@246ec957, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@12a0cbb1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@325c08d5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@239e134e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30077328, org.springframework.security.web.session.SessionManagementFilter@34e8ce90, org.springframework.security.web.access.ExceptionTranslationFilter@6f83a299, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1200e8d8]
-2023-12-26 15:38:19.565  INFO 10912 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-12-26 15:38:19.582  INFO 10912 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2023-12-26 15:38:19.588  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 1.676 seconds (JVM running for 30.182)
-2023-12-26 15:38:19.597  INFO 10912 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
-
-
-==========================
-CONDITION EVALUATION DELTA
-==========================
-
-
-Positive matches:
------------------
-
-   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:
-      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter,org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
-
-   UserDetailsServiceAutoConfiguration matched:
-      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
-      - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) found bean 'objectPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder,org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector,org.springframework.security.oauth2.client.registration.ClientRegistrationRepository,org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository; SearchStrategy: all) did not find any beans (OnBeanCondition)
-
-
-Negative matches:
------------------
-
-   TaskSchedulingAutoConfiguration#scheduledBeanLazyInitializationExcludeFilter:
-      Did not match:
-         - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) did not find any beans named org.springframework.context.annotation.internalScheduledAnnotationProcessor (OnBeanCondition)
-
-   TaskSchedulingAutoConfiguration#taskScheduler:
-      Did not match:
-         - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) did not find any beans named org.springframework.context.annotation.internalScheduledAnnotationProcessor (OnBeanCondition)
-
-
-Exclusions:
------------
-
-    None
-
-
-Unconditional classes:
-----------------------
-
-    None
-
-
-
-2023-12-26 15:38:24.942  INFO 10912 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 119 class path changes (119 additions, 0 deletions, 0 modifications)
-2023-12-26 15:38:24.954  INFO 10912 --- [Thread-9] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-12-26 15:38:24.958  INFO 10912 --- [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-12-26 15:38:24.959  INFO 10912 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2023-12-26 15:38:25.012  INFO 10912 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2023-12-26 15:38:25.148  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.9 on LChumi with PID 10912 (C:\Users\Luis\Documents\Workspace\consumowsdl\target\classes started by Luis in C:\Users\Luis\Documents\Workspace\consumowsdl)
-2023-12-26 15:38:25.148 DEBUG 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2023-12-26 15:38:25.148  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2023-12-26 15:38:25.610  INFO 10912 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-12-26 15:38:25.651  INFO 10912 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 3 JPA repository interfaces.
-2023-12-26 15:38:25.787  INFO 10912 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b6a4103e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2023-12-26 15:38:25.793  INFO 10912 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2023-12-26 15:38:25.928  INFO 10912 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2023-12-26 15:38:25.930  INFO 10912 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-12-26 15:38:25.933  INFO 10912 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2023-12-26 15:38:25.978  INFO 10912 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-12-26 15:38:25.978  INFO 10912 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 825 ms
-2023-12-26 15:38:26.015 DEBUG 10912 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
-2023-12-26 15:38:26.088  INFO 10912 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-12-26 15:38:26.096  INFO 10912 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2023-12-26 15:38:26.211  INFO 10912 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2023-12-26 15:38:26.213  INFO 10912 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2023-12-26 15:38:26.379  INFO 10912 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-12-26 15:38:26.379  INFO 10912 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-12-26 15:38:26.841  INFO 10912 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
-2023-12-26 15:38:26.929  WARN 10912 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-12-26 15:38:27.059  INFO 10912 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2359ef27, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@555c7b44, org.springframework.security.web.context.SecurityContextPersistenceFilter@77495f8b, org.springframework.security.web.header.HeaderWriterFilter@1796ca00, org.springframework.web.filter.CorsFilter@f73e39f, org.springframework.security.web.authentication.logout.LogoutFilter@4baf1f5a, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@626ac8fd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75e405f7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54831781, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@67a11d1c, org.springframework.security.web.session.SessionManagementFilter@3d83f0ab, org.springframework.security.web.access.ExceptionTranslationFilter@2700bee, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7fec5478]
-2023-12-26 15:38:27.162  INFO 10912 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-12-26 15:38:27.176  INFO 10912 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2023-12-26 15:38:27.181  INFO 10912 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 2.105 seconds (JVM running for 37.775)
-2023-12-26 15:38:27.182  INFO 10912 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
-
-
-==========================
-CONDITION EVALUATION DELTA
-==========================
-
-
-Positive matches:
------------------
-
-   TaskSchedulingAutoConfiguration#scheduledBeanLazyInitializationExcludeFilter matched:
-      - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) found bean 'org.springframework.context.annotation.internalScheduledAnnotationProcessor' (OnBeanCondition)
-
-   TaskSchedulingAutoConfiguration#taskScheduler matched:
-      - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) found bean 'org.springframework.context.annotation.internalScheduledAnnotationProcessor'; @ConditionalOnMissingBean (types: org.springframework.scheduling.annotation.SchedulingConfigurer,org.springframework.scheduling.TaskScheduler,java.util.concurrent.ScheduledExecutorService; SearchStrategy: all) did not find any beans (OnBeanCondition)
-
-
-Negative matches:
------------------
-
-   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
-      Did not match:
-         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter,org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' web; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
-
-   UserDetailsServiceAutoConfiguration:
-      Did not match:
-         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder,org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector,org.springframework.security.oauth2.client.registration.ClientRegistrationRepository,org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager and found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' userDetailsServiceImpl (OnBeanCondition)
-      Matched:
-         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
-
-
-Exclusions:
------------
-
-    None
-
-
-Unconditional classes:
-----------------------
-
-    None
-
-
-
-2023-12-26 15:39:33.957  INFO 10912 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-12-26 15:39:33.958  INFO 10912 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
-2023-12-26 15:39:34.033  INFO 10912 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
-2023-12-26 15:39:37.551  INFO 12088 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.9 on LChumi with PID 12088 (C:\Users\Luis\Documents\Workspace\consumowsdl\target\classes started by Luis in C:\Users\Luis\Documents\Workspace\consumowsdl)
-2023-12-26 15:39:37.552 DEBUG 12088 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2023-12-26 15:39:37.552  INFO 12088 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2023-12-26 15:39:37.600  INFO 12088 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Luis\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Luis/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
-2023-12-26 15:39:37.600  INFO 12088 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-12-26 15:39:37.600  INFO 12088 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-12-26 15:39:38.285  INFO 12088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-12-26 15:39:38.346  INFO 12088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 3 JPA repository interfaces.
-2023-12-26 15:39:38.622  INFO 12088 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$8b0a6dd7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2023-12-26 15:39:38.656  INFO 12088 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2023-12-26 15:39:38.881  INFO 12088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2023-12-26 15:39:38.888  INFO 12088 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-12-26 15:39:38.889  INFO 12088 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2023-12-26 15:39:38.962  INFO 12088 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-12-26 15:39:38.962  INFO 12088 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1362 ms
-2023-12-26 15:39:39.005 DEBUG 12088 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
-2023-12-26 15:39:39.135  INFO 12088 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-12-26 15:39:39.174  INFO 12088 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-12-26 15:39:39.302  INFO 12088 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-12-26 15:39:39.397  INFO 12088 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-12-26 15:39:39.694  INFO 12088 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-12-26 15:39:39.709  INFO 12088 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2023-12-26 15:39:40.308  INFO 12088 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-12-26 15:39:40.316  INFO 12088 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-12-26 15:39:40.837  INFO 12088 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
-2023-12-26 15:39:41.036  WARN 12088 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-12-26 15:39:41.194  INFO 12088 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@781c2c8a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ee43dba, org.springframework.security.web.context.SecurityContextPersistenceFilter@7fe2b894, org.springframework.security.web.header.HeaderWriterFilter@3e709dec, org.springframework.web.filter.CorsFilter@143dbd7d, org.springframework.security.web.authentication.logout.LogoutFilter@2ede43e, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@552cf380, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3e971d5f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c72e78d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@46209c74, org.springframework.security.web.session.SessionManagementFilter@2d5ea6c6, org.springframework.security.web.access.ExceptionTranslationFilter@66057a8b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1f70759e]
-2023-12-26 15:39:41.429  INFO 12088 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-12-26 15:39:41.458  INFO 12088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2023-12-26 15:39:41.471  INFO 12088 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 4.253 seconds (JVM running for 4.999)
-2023-12-26 15:40:29.777  INFO 12088 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-12-26 15:40:29.779  INFO 12088 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-12-26 15:40:29.851  INFO 12088 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-05-18 12:07:06.038  INFO 3392 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.10 on NR-SIS-02 with PID 3392 (C:\Users\lchumi\Documents\GitHub\consumoWsdlSice\target\classes started by lchumi in C:\Users\lchumi\Documents\GitHub\consumoWsdlSice)
-2024-05-18 12:07:06.039 DEBUG 3392 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2024-05-18 12:07:06.040  INFO 3392 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-05-18 12:07:06.117  INFO 3392 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\lchumi\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/lchumi/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
-2024-05-18 12:07:06.117  INFO 3392 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-05-18 12:07:06.117  INFO 3392 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-05-18 12:07:08.026  INFO 3392 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-18 12:07:08.073  INFO 3392 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 3 JPA repository interfaces.
-2024-05-18 12:07:08.295  INFO 3392 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$8a1f9b59] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2024-05-18 12:07:08.339  INFO 3392 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-05-18 12:07:08.601  INFO 3392 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2024-05-18 12:07:08.609  INFO 3392 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-18 12:07:08.609  INFO 3392 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2024-05-18 12:07:14.365  INFO 3392 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-18 12:07:14.366  INFO 3392 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8249 ms
-2024-05-18 12:07:14.406 DEBUG 3392 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
-2024-05-18 12:07:14.508  INFO 3392 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-18 12:07:14.547  INFO 3392 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2024-05-18 12:07:14.680  INFO 3392 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2024-05-18 12:07:14.741  INFO 3392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-18 12:07:14.974  INFO 3392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-18 12:07:14.989  INFO 3392 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2024-05-18 12:07:15.448  INFO 3392 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-05-18 12:07:15.454  INFO 3392 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 12:07:15.828  INFO 3392 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
-2024-05-18 12:07:15.992  WARN 3392 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-18 12:07:16.099  INFO 3392 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6e369ec5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25e2a5d2, org.springframework.security.web.context.SecurityContextPersistenceFilter@55dd45ca, org.springframework.security.web.header.HeaderWriterFilter@44837aaf, org.springframework.web.filter.CorsFilter@2656ce85, org.springframework.security.web.authentication.logout.LogoutFilter@404ec1f9, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@5a98af9d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7bc38bf5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4952579b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c5d41fe, org.springframework.security.web.session.SessionManagementFilter@5bcbe30f, org.springframework.security.web.access.ExceptionTranslationFilter@66195a30, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@413eaf10]
-2024-05-18 12:07:16.265  INFO 3392 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-05-18 12:07:16.297  INFO 3392 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2024-05-18 12:07:16.310  INFO 3392 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 10.705 seconds (JVM running for 11.588)
-2024-05-18 12:07:46.291  INFO 3392 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 122 class path changes (0 additions, 121 deletions, 1 modification)
-2024-05-18 12:07:46.299  INFO 3392 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2024-05-18 12:07:46.305  INFO 3392 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 12:07:46.308  INFO 3392 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-05-18 12:07:46.358  INFO 3392 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-05-18 12:07:46.426  INFO 3392 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.10 on NR-SIS-02 with PID 3392 (C:\Users\lchumi\Documents\GitHub\consumoWsdlSice\target\classes started by lchumi in C:\Users\lchumi\Documents\GitHub\consumoWsdlSice)
-2024-05-18 12:07:46.426 DEBUG 3392 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2024-05-18 12:07:46.427  INFO 3392 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-05-18 12:07:46.516  INFO 3392 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-18 12:07:46.517  INFO 3392 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
-2024-05-18 12:07:46.542  INFO 3392 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$8a1f9b59] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2024-05-18 12:07:46.543  INFO 3392 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-05-18 12:07:46.566  INFO 3392 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2024-05-18 12:07:46.566  INFO 3392 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-18 12:07:46.566  INFO 3392 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2024-05-18 12:07:46.581  INFO 3392 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-18 12:07:46.581  INFO 3392 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 153 ms
-2024-05-18 12:07:46.614  INFO 3392 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-18 12:07:46.616  INFO 3392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-05-18 12:07:46.691  INFO 3392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-05-18 12:07:46.692  INFO 3392 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2024-05-18 12:07:46.699  INFO 3392 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-05-18 12:07:46.700  INFO 3392 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 12:07:46.736  WARN 3392 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-18 12:07:46.829  WARN 3392 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 2d4215e6-db56-4b32-84ae-993ee8d6968a
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2024-05-18 12:07:46.855  INFO 3392 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7345becf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e75d792, org.springframework.security.web.context.SecurityContextPersistenceFilter@d108446, org.springframework.security.web.header.HeaderWriterFilter@1db2a241, org.springframework.security.web.csrf.CsrfFilter@13579381, org.springframework.security.web.authentication.logout.LogoutFilter@7e321533, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4a5365b0, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6a6b65be, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@75a6c17d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1ac0dad3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66334a92, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6e9b4cbf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@692c8b58, org.springframework.security.web.session.SessionManagementFilter@22f4c002, org.springframework.security.web.access.ExceptionTranslationFilter@73331f61, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5a7ab099]
-2024-05-18 12:07:46.868  INFO 3392 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-05-18 12:07:46.879  INFO 3392 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2024-05-18 12:07:46.884  INFO 3392 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 0.481 seconds (JVM running for 42.162)
-2024-05-18 12:07:46.891  INFO 3392 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
-
-
-==========================
-CONDITION EVALUATION DELTA
-==========================
-
-
-Positive matches:
------------------
-
-   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:
-      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter,org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
-
-   UserDetailsServiceAutoConfiguration matched:
-      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
-      - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) found bean 'objectPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder,org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector,org.springframework.security.oauth2.client.registration.ClientRegistrationRepository,org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository; SearchStrategy: all) did not find any beans (OnBeanCondition)
-
-
-Negative matches:
------------------
-
-   TaskSchedulingAutoConfiguration#scheduledBeanLazyInitializationExcludeFilter:
-      Did not match:
-         - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) did not find any beans named org.springframework.context.annotation.internalScheduledAnnotationProcessor (OnBeanCondition)
-
-   TaskSchedulingAutoConfiguration#taskScheduler:
-      Did not match:
-         - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) did not find any beans named org.springframework.context.annotation.internalScheduledAnnotationProcessor (OnBeanCondition)
-
-
-Exclusions:
------------
-
-    None
-
-
-Unconditional classes:
-----------------------
-
-    None
-
-
-
-2024-05-18 12:07:49.130  INFO 3392 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 121 class path changes (121 additions, 0 deletions, 0 modifications)
-2024-05-18 12:07:49.143  INFO 3392 --- [Thread-9] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2024-05-18 12:07:49.149  INFO 3392 --- [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 12:07:49.150  INFO 3392 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2024-05-18 12:07:49.214  INFO 3392 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2024-05-18 12:07:49.349  INFO 3392 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.10 on NR-SIS-02 with PID 3392 (C:\Users\lchumi\Documents\GitHub\consumoWsdlSice\target\classes started by lchumi in C:\Users\lchumi\Documents\GitHub\consumoWsdlSice)
-2024-05-18 12:07:49.349 DEBUG 3392 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2024-05-18 12:07:49.349  INFO 3392 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-05-18 12:07:50.207  INFO 3392 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-18 12:07:50.263  INFO 3392 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 3 JPA repository interfaces.
-2024-05-18 12:07:50.376  INFO 3392 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$8a1f9b59] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2024-05-18 12:07:50.378  INFO 3392 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-05-18 12:07:50.443  INFO 3392 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2024-05-18 12:07:50.444  INFO 3392 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-18 12:07:50.445  INFO 3392 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2024-05-18 12:07:50.489  INFO 3392 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-18 12:07:50.489  INFO 3392 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1136 ms
-2024-05-18 12:07:50.524 DEBUG 3392 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
-2024-05-18 12:07:50.590  INFO 3392 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-18 12:07:50.600  INFO 3392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2024-05-18 12:07:50.684  INFO 3392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2024-05-18 12:07:50.685  INFO 3392 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2024-05-18 12:07:50.760  INFO 3392 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-05-18 12:07:50.760  INFO 3392 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 12:07:50.919  INFO 3392 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
-2024-05-18 12:07:50.986  WARN 3392 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-18 12:07:51.046  INFO 3392 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@d1a2c12, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5e741c9, org.springframework.security.web.context.SecurityContextPersistenceFilter@2ac63ade, org.springframework.security.web.header.HeaderWriterFilter@59b788bf, org.springframework.web.filter.CorsFilter@340925d8, org.springframework.security.web.authentication.logout.LogoutFilter@751b48b5, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@1b2692d3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1570ebc9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@70e76ba8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d4dccb1, org.springframework.security.web.session.SessionManagementFilter@277733c4, org.springframework.security.web.access.ExceptionTranslationFilter@31e1cd12, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2efb3d9c]
-2024-05-18 12:07:51.119  INFO 3392 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-05-18 12:07:51.142  INFO 3392 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2024-05-18 12:07:51.148  INFO 3392 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 1.834 seconds (JVM running for 46.426)
-2024-05-18 12:07:51.150  INFO 3392 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
-
-
-==========================
-CONDITION EVALUATION DELTA
-==========================
-
-
-Positive matches:
------------------
-
-   TaskSchedulingAutoConfiguration#scheduledBeanLazyInitializationExcludeFilter matched:
-      - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) found bean 'org.springframework.context.annotation.internalScheduledAnnotationProcessor' (OnBeanCondition)
-
-   TaskSchedulingAutoConfiguration#taskScheduler matched:
-      - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) found bean 'org.springframework.context.annotation.internalScheduledAnnotationProcessor'; @ConditionalOnMissingBean (types: org.springframework.scheduling.annotation.SchedulingConfigurer,org.springframework.scheduling.TaskScheduler,java.util.concurrent.ScheduledExecutorService; SearchStrategy: all) did not find any beans (OnBeanCondition)
-
-
-Negative matches:
------------------
-
-   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
-      Did not match:
-         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter,org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' web; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
-
-   UserDetailsServiceAutoConfiguration:
-      Did not match:
-         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder,org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector,org.springframework.security.oauth2.client.registration.ClientRegistrationRepository,org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager and found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' userDetailsServiceImpl (OnBeanCondition)
-      Matched:
-         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
-
-
-Exclusions:
------------
-
-    None
-
-
-Unconditional classes:
-----------------------
-
-    None
-
-
-
-2024-05-18 12:10:25.204  INFO 3392 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 12:10:25.204  INFO 3392 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
-2024-05-18 12:10:25.288  INFO 3392 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
-2024-05-18 12:10:29.301  INFO 10388 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.10 on NR-SIS-02 with PID 10388 (C:\Users\lchumi\Documents\GitHub\consumoWsdlSice\target\classes started by lchumi in C:\Users\lchumi\Documents\GitHub\consumoWsdlSice)
-2024-05-18 12:10:29.303 DEBUG 10388 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2024-05-18 12:10:29.303  INFO 10388 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-05-18 12:10:29.343  INFO 10388 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\lchumi\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/lchumi/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
-2024-05-18 12:10:29.343  INFO 10388 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-05-18 12:10:29.343  INFO 10388 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-05-18 12:10:29.776  INFO 10388 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-18 12:10:29.815  INFO 10388 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 3 JPA repository interfaces.
-2024-05-18 12:10:29.981  INFO 10388 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$48a0aebe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2024-05-18 12:10:30.011  INFO 10388 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-05-18 12:10:30.203  INFO 10388 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2024-05-18 12:10:30.209  INFO 10388 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-18 12:10:30.209  INFO 10388 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2024-05-18 12:10:30.246  INFO 10388 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-18 12:10:30.247  INFO 10388 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 903 ms
-2024-05-18 12:10:30.277 DEBUG 10388 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
-2024-05-18 12:10:30.363  INFO 10388 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-18 12:10:30.385  INFO 10388 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2024-05-18 12:10:30.490  INFO 10388 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2024-05-18 12:10:30.548  INFO 10388 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-18 12:10:30.771  INFO 10388 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-18 12:10:30.784  INFO 10388 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2024-05-18 12:10:31.155  INFO 10388 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-05-18 12:10:31.160  INFO 10388 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 12:10:31.495  INFO 10388 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
-2024-05-18 12:10:31.641  WARN 10388 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-18 12:10:31.738  INFO 10388 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4924639, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f092e1, org.springframework.security.web.context.SecurityContextPersistenceFilter@d18d64c, org.springframework.security.web.header.HeaderWriterFilter@68644efe, org.springframework.web.filter.CorsFilter@2da3e3d3, org.springframework.security.web.authentication.logout.LogoutFilter@15e07ce, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@4e1f4525, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e587459, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47f21af8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53e3ed93, org.springframework.security.web.session.SessionManagementFilter@235bbda2, org.springframework.security.web.access.ExceptionTranslationFilter@3977267e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@360a92aa]
-2024-05-18 12:10:31.896  INFO 10388 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-05-18 12:10:31.916  INFO 10388 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2024-05-18 12:10:31.926  INFO 10388 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 2.86 seconds (JVM running for 3.285)
-2024-05-18 12:11:36.341  INFO 10388 --- [http-nio-7571-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-05-18 12:11:36.341  INFO 10388 --- [http-nio-7571-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-05-18 12:11:36.341  INFO 10388 --- [http-nio-7571-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2024-05-18 12:13:23.501  INFO 10388 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 12:13:23.503  INFO 10388 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-05-18 12:13:23.569  INFO 10388 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-05-18 12:39:42.708  INFO 18252 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.10 on NR-SIS-02 with PID 18252 (C:\Users\lchumi\Documents\GitHub\consumoWsdlSice\target\classes started by lchumi in C:\Users\lchumi\Documents\GitHub\consumoWsdlSice)
-2024-05-18 12:39:42.709 DEBUG 18252 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2024-05-18 12:39:42.710  INFO 18252 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-05-18 12:39:42.755  INFO 18252 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\lchumi\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/lchumi/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
-2024-05-18 12:39:42.755  INFO 18252 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-05-18 12:39:42.756  INFO 18252 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-05-18 12:39:43.596  INFO 18252 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-18 12:39:43.669  INFO 18252 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 3 JPA repository interfaces.
-2024-05-18 12:39:43.955  INFO 18252 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$24e81aa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2024-05-18 12:39:43.995  INFO 18252 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-05-18 12:39:44.359  INFO 18252 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2024-05-18 12:39:44.369  INFO 18252 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-18 12:39:44.369  INFO 18252 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2024-05-18 12:39:44.467  INFO 18252 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-18 12:39:44.467  INFO 18252 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1711 ms
-2024-05-18 12:39:44.519 DEBUG 18252 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
-2024-05-18 12:39:44.702  INFO 18252 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-18 12:39:44.760  INFO 18252 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2024-05-18 12:39:44.978  INFO 18252 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2024-05-18 12:39:45.068  INFO 18252 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-18 12:39:45.396  INFO 18252 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-18 12:39:45.411  INFO 18252 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2024-05-18 12:39:45.841  INFO 18252 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-05-18 12:39:45.847  INFO 18252 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 12:39:46.291  INFO 18252 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
-2024-05-18 12:39:46.509  WARN 18252 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-18 12:39:46.650  INFO 18252 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7ce98ebf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@72c99cbf, org.springframework.security.web.context.SecurityContextPersistenceFilter@3c8d9ab7, org.springframework.security.web.header.HeaderWriterFilter@3b8e94cf, org.springframework.web.filter.CorsFilter@17d62a32, org.springframework.security.web.authentication.logout.LogoutFilter@147251e, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@8f258a2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c5ab871, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44837aaf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39cc3537, org.springframework.security.web.session.SessionManagementFilter@69c6610f, org.springframework.security.web.access.ExceptionTranslationFilter@226ba077, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3de41515]
-2024-05-18 12:39:46.843  WARN 18252 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2024-05-18 12:39:46.871  INFO 18252 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2024-05-18 12:39:46.884  INFO 18252 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 4.431 seconds (JVM running for 4.897)
-2024-05-18 12:39:46.913  INFO 18252 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 12:39:46.914  INFO 18252 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-05-18 12:39:46.960  INFO 18252 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-05-18 12:39:59.738  INFO 1044 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.10 on NR-SIS-02 with PID 1044 (C:\Users\lchumi\Documents\GitHub\consumoWsdlSice\target\classes started by lchumi in C:\Users\lchumi\Documents\GitHub\consumoWsdlSice)
-2024-05-18 12:39:59.740 DEBUG 1044 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2024-05-18 12:39:59.741  INFO 1044 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-05-18 12:39:59.809  INFO 1044 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\lchumi\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/lchumi/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
-2024-05-18 12:39:59.809  INFO 1044 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-05-18 12:39:59.809  INFO 1044 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-05-18 12:40:00.521  INFO 1044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-18 12:40:00.574  INFO 1044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 3 JPA repository interfaces.
-2024-05-18 12:40:00.798  INFO 1044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$48a0aebe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2024-05-18 12:40:00.827  INFO 1044 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-05-18 12:40:01.051  INFO 1044 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2024-05-18 12:40:01.057  INFO 1044 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-18 12:40:01.057  INFO 1044 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2024-05-18 12:40:01.112  INFO 1044 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-18 12:40:01.113  INFO 1044 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1304 ms
-2024-05-18 12:40:01.151 DEBUG 1044 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
-2024-05-18 12:40:01.267  INFO 1044 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-18 12:40:01.307  INFO 1044 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2024-05-18 12:40:01.418  INFO 1044 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2024-05-18 12:40:01.488  INFO 1044 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-18 12:40:01.734  INFO 1044 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-18 12:40:01.746  INFO 1044 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2024-05-18 12:40:02.195  INFO 1044 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-05-18 12:40:02.204  INFO 1044 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 12:40:02.624  INFO 1044 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
-2024-05-18 12:40:02.815  WARN 1044 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-18 12:40:02.966  INFO 1044 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@673311cb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@b71e2e8, org.springframework.security.web.context.SecurityContextPersistenceFilter@79ef8e1e, org.springframework.security.web.header.HeaderWriterFilter@30afaa8, org.springframework.web.filter.CorsFilter@11478733, org.springframework.security.web.authentication.logout.LogoutFilter@5efde38b, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@4e1f4525, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@553f0350, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@802262c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7b50add1, org.springframework.security.web.session.SessionManagementFilter@18b85ac3, org.springframework.security.web.access.ExceptionTranslationFilter@10a6d1f5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@35071108]
-2024-05-18 12:40:03.199  WARN 1044 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2024-05-18 12:40:03.231  INFO 1044 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2024-05-18 12:40:03.245  INFO 1044 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 3.827 seconds (JVM running for 4.306)
-2024-05-18 12:40:21.372  INFO 1044 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 12:40:21.374  INFO 1044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-05-18 12:40:21.433  INFO 1044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-05-18 12:40:26.093  INFO 17512 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.10 on NR-SIS-02 with PID 17512 (C:\Users\lchumi\Documents\GitHub\consumoWsdlSice\target\classes started by lchumi in C:\Users\lchumi\Documents\GitHub\consumoWsdlSice)
-2024-05-18 12:40:26.094 DEBUG 17512 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2024-05-18 12:40:26.095  INFO 17512 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-05-18 12:40:26.159  INFO 17512 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\lchumi\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/lchumi/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
-2024-05-18 12:40:26.159  INFO 17512 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-05-18 12:40:26.159  INFO 17512 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-05-18 12:40:26.821  INFO 17512 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-18 12:40:26.870  INFO 17512 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 3 JPA repository interfaces.
-2024-05-18 12:40:27.085  INFO 17512 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$eaff54db] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2024-05-18 12:40:27.115  INFO 17512 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-05-18 12:40:27.349  INFO 17512 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2024-05-18 12:40:27.356  INFO 17512 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-18 12:40:27.357  INFO 17512 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2024-05-18 12:40:27.406  INFO 17512 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-18 12:40:27.406  INFO 17512 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1247 ms
-2024-05-18 12:40:27.443 DEBUG 17512 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
-2024-05-18 12:40:27.556  INFO 17512 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-18 12:40:27.601  INFO 17512 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2024-05-18 12:40:27.705  INFO 17512 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2024-05-18 12:40:27.775  INFO 17512 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-18 12:40:28.002  INFO 17512 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-18 12:40:28.011  INFO 17512 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2024-05-18 12:40:28.435  INFO 17512 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-05-18 12:40:28.443  INFO 17512 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 12:40:28.835  INFO 17512 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
-2024-05-18 12:40:29.020  WARN 17512 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-18 12:40:29.148  INFO 17512 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@57723c63, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2eceab06, org.springframework.security.web.context.SecurityContextPersistenceFilter@737c82e, org.springframework.security.web.header.HeaderWriterFilter@303738bb, org.springframework.web.filter.CorsFilter@1ae58ac8, org.springframework.security.web.authentication.logout.LogoutFilter@1db54410, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@62889d6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@578b3a45, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@106be1cd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f311c0e, org.springframework.security.web.session.SessionManagementFilter@22b3f47c, org.springframework.security.web.access.ExceptionTranslationFilter@6bd0b94e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@352fa9d9]
-2024-05-18 12:40:29.380  WARN 17512 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2024-05-18 12:40:29.416  INFO 17512 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2024-05-18 12:40:29.431  INFO 17512 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 3.669 seconds (JVM running for 4.167)
-2024-05-18 12:59:59.994  INFO 17512 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   :  ------------- Iniciando proceso ------------------- 
-2024-05-18 13:00:01.385  INFO 17512 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0026988 cco: 112700000000000000000009346483 empresa: 4 clave 1805202401019042705600120020110000269883617338519
-2024-05-18 13:00:02.766 ERROR 17512 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : Ocurrio un error a nivel general: 403 : [no body]
-2024-05-18 13:02:15.143  INFO 17512 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 13:02:15.145  INFO 17512 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-05-18 13:02:15.188  INFO 17512 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-05-18 13:28:50.058  INFO 13388 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.10 on NR-SIS-02 with PID 13388 (C:\Users\lchumi\Documents\GitHub\consumoWsdlSice\target\classes started by lchumi in C:\Users\lchumi\Documents\GitHub\consumoWsdlSice)
-2024-05-18 13:28:50.060 DEBUG 13388 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2024-05-18 13:28:50.061  INFO 13388 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-05-18 13:28:50.125  INFO 13388 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\lchumi\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/lchumi/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
-2024-05-18 13:28:50.125  INFO 13388 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-05-18 13:28:50.125  INFO 13388 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-05-18 13:28:50.788  INFO 13388 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-18 13:28:50.862  INFO 13388 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 3 JPA repository interfaces.
-2024-05-18 13:28:51.096  INFO 13388 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f27986a2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2024-05-18 13:28:51.135  INFO 13388 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-05-18 13:28:51.365  INFO 13388 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2024-05-18 13:28:51.372  INFO 13388 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-18 13:28:51.372  INFO 13388 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2024-05-18 13:28:51.414  INFO 13196 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.10 on NR-SIS-02 with PID 13196 (C:\Users\lchumi\Documents\GitHub\consumoWsdlSice\target\classes started by lchumi in C:\Users\lchumi\Documents\GitHub\consumoWsdlSice)
-2024-05-18 13:28:51.415 DEBUG 13196 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2024-05-18 13:28:51.415  INFO 13196 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-05-18 13:28:51.440  INFO 13388 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-18 13:28:51.440  INFO 13388 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1315 ms
-2024-05-18 13:28:51.464  INFO 13196 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\lchumi\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/lchumi/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
-2024-05-18 13:28:51.464  INFO 13196 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-05-18 13:28:51.464  INFO 13196 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-05-18 13:28:51.485 DEBUG 13388 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
-2024-05-18 13:28:51.588  INFO 13388 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-18 13:28:51.615  INFO 13388 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2024-05-18 13:28:51.741  INFO 13388 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2024-05-18 13:28:51.806  INFO 13388 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-18 13:28:51.959  INFO 13196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-18 13:28:52.002  INFO 13196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
-2024-05-18 13:28:52.032  INFO 13388 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-18 13:28:52.041  INFO 13388 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2024-05-18 13:28:52.188  INFO 13196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$eaff54db] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2024-05-18 13:28:52.214  INFO 13196 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-05-18 13:28:52.432  INFO 13196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2024-05-18 13:28:52.439  INFO 13196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-18 13:28:52.440  INFO 13196 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2024-05-18 13:28:52.467  INFO 13388 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-05-18 13:28:52.474  INFO 13388 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 13:28:52.498  INFO 13196 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-18 13:28:52.498  INFO 13196 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1034 ms
-2024-05-18 13:28:52.548 DEBUG 13196 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
-2024-05-18 13:28:52.690  INFO 13196 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-18 13:28:52.726  INFO 13196 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2024-05-18 13:28:52.871  INFO 13196 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2024-05-18 13:28:52.965  INFO 13196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-18 13:28:52.991  INFO 13388 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
-2024-05-18 13:28:53.229  WARN 13388 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-18 13:28:53.274  INFO 13196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-18 13:28:53.286  INFO 13196 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2024-05-18 13:28:53.378  INFO 13388 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5241ffde, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2802b335, org.springframework.security.web.context.SecurityContextPersistenceFilter@6234ff23, org.springframework.security.web.header.HeaderWriterFilter@5b40d819, org.springframework.web.filter.CorsFilter@366e81d5, org.springframework.security.web.authentication.logout.LogoutFilter@445f43fd, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@42f090f9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2eda1b2c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@37950c24, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4c50e9f8, org.springframework.security.web.session.SessionManagementFilter@38ef08c1, org.springframework.security.web.access.ExceptionTranslationFilter@2a56c3db, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@26f58437]
-2024-05-18 13:28:53.626  WARN 13388 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2024-05-18 13:28:53.663  INFO 13388 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2024-05-18 13:28:53.677  INFO 13388 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 3.985 seconds (JVM running for 4.586)
-2024-05-18 13:28:53.857  INFO 13196 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-05-18 13:28:53.864  INFO 13196 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 13:28:54.610  INFO 13196 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
-2024-05-18 13:28:54.835  WARN 13196 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-18 13:28:54.980  INFO 13196 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@26c24bbc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3877b4de, org.springframework.security.web.context.SecurityContextPersistenceFilter@737c82e, org.springframework.security.web.header.HeaderWriterFilter@303738bb, org.springframework.web.filter.CorsFilter@57723c63, org.springframework.security.web.authentication.logout.LogoutFilter@1db54410, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@62889d6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@578b3a45, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@106be1cd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2eceab06, org.springframework.security.web.session.SessionManagementFilter@22b3f47c, org.springframework.security.web.access.ExceptionTranslationFilter@6bd0b94e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@352fa9d9]
-2024-05-18 13:28:55.091  INFO 13388 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 13:28:55.093  INFO 13388 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-05-18 13:28:55.167  INFO 13388 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-05-18 13:28:55.214  WARN 13196 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2024-05-18 13:28:55.239  INFO 13196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2024-05-18 13:28:55.250  INFO 13196 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 4.102 seconds (JVM running for 4.578)
-2024-05-18 13:28:56.007  INFO 13196 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 13:28:56.011  INFO 13196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-05-18 13:28:56.116  INFO 13196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-05-18 13:29:00.075  INFO 12692 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.10 on NR-SIS-02 with PID 12692 (C:\Users\lchumi\Documents\GitHub\consumoWsdlSice\target\classes started by lchumi in C:\Users\lchumi\Documents\GitHub\consumoWsdlSice)
-2024-05-18 13:29:00.076 DEBUG 12692 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
-2024-05-18 13:29:00.076  INFO 12692 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-05-18 13:29:00.153  INFO 12692 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\lchumi\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/lchumi/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
-2024-05-18 13:29:00.153  INFO 12692 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-05-18 13:29:00.153  INFO 12692 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-05-18 13:29:00.815  INFO 12692 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-18 13:29:00.871  INFO 12692 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
-2024-05-18 13:29:01.103  INFO 12692 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$eaff54db] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2024-05-18 13:29:01.131  INFO 12692 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-05-18 13:29:01.356  INFO 12692 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
-2024-05-18 13:29:01.362  INFO 12692 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-18 13:29:01.362  INFO 12692 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
-2024-05-18 13:29:01.411  INFO 12692 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-18 13:29:01.411  INFO 12692 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1257 ms
-2024-05-18 13:29:01.462 DEBUG 12692 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
-2024-05-18 13:29:01.583  INFO 12692 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-18 13:29:01.624  INFO 12692 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2024-05-18 13:29:01.737  INFO 12692 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2024-05-18 13:29:01.814  INFO 12692 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-18 13:29:02.048  INFO 12692 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-18 13:29:02.058  INFO 12692 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2024-05-18 13:29:02.478  INFO 12692 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-05-18 13:29:02.485  INFO 12692 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 13:29:02.879  INFO 12692 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
-2024-05-18 13:29:03.120  WARN 12692 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-18 13:29:03.270  INFO 12692 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7a2c90fa, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4dc445c6, org.springframework.security.web.context.SecurityContextPersistenceFilter@7177523, org.springframework.security.web.header.HeaderWriterFilter@2ee2ebfe, org.springframework.web.filter.CorsFilter@43474053, org.springframework.security.web.authentication.logout.LogoutFilter@61aaf4de, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@62889d6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@22b3f47c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4355c52b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26c24bbc, org.springframework.security.web.session.SessionManagementFilter@23ff14f7, org.springframework.security.web.access.ExceptionTranslationFilter@5a8e64b8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1061528d]
-2024-05-18 13:29:03.546  WARN 12692 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2024-05-18 13:29:03.581  INFO 12692 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
-2024-05-18 13:29:03.602  INFO 12692 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 3.915 seconds (JVM running for 4.511)
-2024-05-18 13:30:00.002  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   :  ------------- Iniciando proceso ------------------- 
-2024-05-18 13:30:01.302  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0026988 cco: 112700000000000000000009346483 empresa: 4 clave 1805202401019042705600120020110000269883617338519
-2024-05-18 13:30:24.918  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:30:27.150  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 112700000000000000000009346483 en la empresa: 4
-2024-05-18 13:30:27.151  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0026989 cco: 112700000000000000000009346495 empresa: 4 clave 1805202401019042705600120020110000269893729047113
-2024-05-18 13:30:40.804  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:30:42.905  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 112700000000000000000009346495 en la empresa: 4
-2024-05-18 13:30:42.905  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0026990 cco: 112700000000000000000009346522 empresa: 4 clave 1805202401019042705600120020110000269901294071311
-2024-05-18 13:30:44.636  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : 1805202401019042705600110020110000269901294071313
-2024-05-18 13:30:46.601  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 112700000000000000000009346522 en la empresa: 4
-2024-05-18 13:30:46.601  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0026991 cco: 112700000000000000000009346624 empresa: 4 clave 1805202401019042705600120020110000269915161483111
-2024-05-18 13:30:48.095  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : 1805202401019042705600110020110000269915161483113
-2024-05-18 13:30:50.015  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 112700000000000000000009346624 en la empresa: 4
-2024-05-18 13:30:50.015  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0026992 cco: 112700000000000000000009346626 empresa: 4 clave 1805202401019042705600120020110000269923271221719
-2024-05-18 13:31:03.132  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:31:05.297  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 112700000000000000000009346626 en la empresa: 4
-2024-05-18 13:31:05.298  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0026993 cco: 112700000000000000000009346629 empresa: 4 clave 1805202401019042705600120020110000269933683144811
-2024-05-18 13:31:14.114  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:31:16.183  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 112700000000000000000009346629 en la empresa: 4
-2024-05-18 13:31:16.183  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0026994 cco: 112700000000000000000009346648 empresa: 4 clave 1805202401019042705600120020110000269941105979415
-2024-05-18 13:31:48.527  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:31:50.788  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 112700000000000000000009346648 en la empresa: 4
-2024-05-18 13:31:50.789  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : GUI-001-106-0000132 cco: 100000000000000000009204964 empresa: 2 clave 2102202406019036806800120011060000001326630640615
-2024-05-18 13:31:51.426  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:31:53.433  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009204964 en la empresa: 2
-2024-05-18 13:31:53.434  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108198 cco: 108600000000000000000009346328 empresa: 3 clave 1805202401010211983100120010110001081989739067117
-2024-05-18 13:31:54.091  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:31:56.005  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346328 en la empresa: 3
-2024-05-18 13:31:56.006  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108199 cco: 108600000000000000000009346339 empresa: 3 clave 1805202401010211983100120010110001081990976480116
-2024-05-18 13:31:56.653  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:31:58.617  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346339 en la empresa: 3
-2024-05-18 13:31:58.618  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108200 cco: 108600000000000000000009346378 empresa: 3 clave 1805202401010211983100120010110001082001583435712
-2024-05-18 13:31:59.260  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:01.183  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346378 en la empresa: 3
-2024-05-18 13:32:01.183  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108201 cco: 108600000000000000000009346387 empresa: 3 clave 1805202401010211983100120010110001082017576614613
-2024-05-18 13:32:01.815  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:03.784  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346387 en la empresa: 3
-2024-05-18 13:32:03.785  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108202 cco: 108600000000000000000009346452 empresa: 3 clave 1805202401010211983100120010110001082022783066212
-2024-05-18 13:32:04.461  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:06.356  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346452 en la empresa: 3
-2024-05-18 13:32:06.357  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108203 cco: 108600000000000000000009346458 empresa: 3 clave 1805202401010211983100120010110001082038663494214
-2024-05-18 13:32:06.995  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:08.959  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346458 en la empresa: 3
-2024-05-18 13:32:08.960  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108204 cco: 108600000000000000000009346470 empresa: 3 clave 1805202401010211983100120010110001082044503189911
-2024-05-18 13:32:09.626  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:11.701  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346470 en la empresa: 3
-2024-05-18 13:32:11.701  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108205 cco: 108600000000000000000009346485 empresa: 3 clave 1805202401010211983100120010110001082051083805510
-2024-05-18 13:32:12.353  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:14.447  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346485 en la empresa: 3
-2024-05-18 13:32:14.448  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : NCCL-001-106-0002188 cco: 100000000000000000009346502 empresa: 2 clave 1805202404019036806800120011060000021888939911612
-2024-05-18 13:32:16.455  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:18.441  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009346502 en la empresa: 2
-2024-05-18 13:32:18.442  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108206 cco: 108600000000000000000009346504 empresa: 3 clave 1805202401010211983100120010110001082064892487818
-2024-05-18 13:32:19.118  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:21.055  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346504 en la empresa: 3
-2024-05-18 13:32:21.056  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108207 cco: 108600000000000000000009346513 empresa: 3 clave 1805202401010211983100120010110001082075421769718
-2024-05-18 13:32:21.687  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:23.580  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346513 en la empresa: 3
-2024-05-18 13:32:23.582  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108208 cco: 108600000000000000000009346562 empresa: 3 clave 1805202401010211983100120010110001082085091138118
-2024-05-18 13:32:24.235  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:26.224  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346562 en la empresa: 3
-2024-05-18 13:32:26.225  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108209 cco: 108600000000000000000009346616 empresa: 3 clave 1805202401010211983100120010110001082098026123817
-2024-05-18 13:32:26.950  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:28.919  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346616 en la empresa: 3
-2024-05-18 13:32:28.919  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108210 cco: 108600000000000000000009346642 empresa: 3 clave 1805202401010211983100120010110001082107823300014
-2024-05-18 13:32:29.528  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:31.604  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108211 cco: 108600000000000000000009346650 empresa: 3 clave 1805202401010211983100120010110001082119746879819
-2024-05-18 13:32:32.222  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:34.116  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346650 en la empresa: 3
-2024-05-18 13:32:34.117  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108212 cco: 108600000000000000000009346680 empresa: 3 clave 1805202401010211983100120010110001082127572922011
-2024-05-18 13:32:34.788  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:36.802  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108213 cco: 108600000000000000000009346691 empresa: 3 clave 1805202401010211983100120010110001082137059131810
-2024-05-18 13:32:37.463  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:39.402  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346691 en la empresa: 3
-2024-05-18 13:32:39.402  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108214 cco: 108600000000000000000009346739 empresa: 3 clave 1805202401010211983100120010110001082145638288619
-2024-05-18 13:32:40.047  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:41.961  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346739 en la empresa: 3
-2024-05-18 13:32:41.961  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108215 cco: 108600000000000000000009346752 empresa: 3 clave 1805202401010211983100120010110001082151026749511
-2024-05-18 13:32:42.656  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:44.463  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108600000000000000000009346752 en la empresa: 3
-2024-05-18 13:32:44.463  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108216 cco: 108600000000000000000009346769 empresa: 3 clave 1805202401010211983100120010110001082162562989517
-2024-05-18 13:32:45.120  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:47.173  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-011-0108219 cco: 108600000000000000000009346842 empresa: 3 clave 1805202401010211983100120010110001082199208202918
-2024-05-18 13:32:47.808  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:49.879  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-107-0037822 cco: 200000000000000000009333561 empresa: 2 clave 1005202401019036806800120011070000378225970018111
-2024-05-18 13:32:50.775  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : 1005202401019036806800110011070000378225970018113
-2024-05-18 13:32:52.643  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 200000000000000000009333561 en la empresa: 2
-2024-05-18 13:32:52.644  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-107-0037823 cco: 100000000000000000009333566 empresa: 2 clave 1005202401019036806800120011070000378233774390714
-2024-05-18 13:32:54.493  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:56.376  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009333566 en la empresa: 2
-2024-05-18 13:32:56.377  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : GUI-001-105-0000136 cco: 100000000000000000009231389 empresa: 2 clave 0803202406019036806800120011050000001369888179215
-2024-05-18 13:32:56.980  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:32:58.857  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009231389 en la empresa: 2
-2024-05-18 13:32:58.857  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-105-0079949 cco: 100000000000000000009336359 empresa: 2 clave 1205202401019036806800120011050000799494017754016
-2024-05-18 13:32:59.680  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : 1205202401019036806800110011050000799494017754018
-2024-05-18 13:33:01.679  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009336359 en la empresa: 2
-2024-05-18 13:33:01.680  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-105-0079890 cco: 100000000000000000009335116 empresa: 2 clave 1105202401019036806800120011050000798902071109511
-2024-05-18 13:33:32.894  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:33:35.312  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009335116 en la empresa: 2
-2024-05-18 13:33:35.313  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-105-0079891 cco: 100000000000000000009335137 empresa: 2 clave 1105202401019036806800120011050000798917407947214
-2024-05-18 13:33:43.602  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : 1105202401019036806800110011050000798917407947216
-2024-05-18 13:33:45.954  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009335137 en la empresa: 2
-2024-05-18 13:33:45.954  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-107-0038023 cco: 100000000000000000009337119 empresa: 2 clave 1305202401019036806800120011070000380238948479315
-2024-05-18 13:34:00.549  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:34:02.661  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009337119 en la empresa: 2
-2024-05-18 13:34:02.661  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-108-0047265 cco: 100000000000000000009338026 empresa: 2 clave 1305202401019036806800120011080000472656024915217
-2024-05-18 13:34:03.447  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : 1305202401019036806800110011080000472656024915219
-2024-05-18 13:34:05.391  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009338026 en la empresa: 2
-2024-05-18 13:34:05.391  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : RET-001-011-0029594 cco: 100000000000000000009340701 empresa: 2 clave 1405202407019036806800120010110000295948172565713
-2024-05-18 13:34:08.323  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:34:10.386  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009340701 en la empresa: 2
-2024-05-18 13:34:10.386  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : RET-001-011-0029601 cco: 100000000000000000009340737 empresa: 2 clave 1405202407019036806800120010110000296019141087115
-2024-05-18 13:34:11.347  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : 1405202407019036806800110010110000296019141087117
-2024-05-18 13:34:13.376  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009340737 en la empresa: 2
-2024-05-18 13:34:13.376  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-107-0038250 cco: 100000000000000000009344383 empresa: 2 clave 1705202401019036806800120011070000382509903969612
-2024-05-18 13:34:36.217  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:34:38.433  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009344383 en la empresa: 2
-2024-05-18 13:34:38.433  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0138945 cco: 108700000000000000000009346262 empresa: 3 clave 1805202401010211983100120020110001389454903615916
-2024-05-18 13:34:39.077  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:34:40.898  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009346262 en la empresa: 3
-2024-05-18 13:34:40.899  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0138946 cco: 108700000000000000000009346265 empresa: 3 clave 1805202401010211983100120020110001389465184467014
-2024-05-18 13:34:41.536  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:34:43.431  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009346265 en la empresa: 3
-2024-05-18 13:34:43.431  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0138947 cco: 108700000000000000000009346278 empresa: 3 clave 1805202401010211983100120020110001389474734110711
-2024-05-18 13:34:44.044  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:34:45.996  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009346278 en la empresa: 3
-2024-05-18 13:34:45.996  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0138948 cco: 108700000000000000000009346297 empresa: 3 clave 1805202401010211983100120020110001389484757808010
-2024-05-18 13:34:46.681  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:34:48.715  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009346297 en la empresa: 3
-2024-05-18 13:34:48.716  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0138949 cco: 108700000000000000000009346301 empresa: 3 clave 1805202401010211983100120020110001389496598915119
-2024-05-18 13:34:49.453  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:34:51.551  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009346301 en la empresa: 3
-2024-05-18 13:34:51.551  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0138950 cco: 108700000000000000000009346314 empresa: 3 clave 1805202401010211983100120020110001389503891302519
-2024-05-18 13:34:52.234  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:34:54.261  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009346314 en la empresa: 3
-2024-05-18 13:34:54.262  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0138951 cco: 108700000000000000000009346317 empresa: 3 clave 1805202401010211983100120020110001389516805467319
-2024-05-18 13:34:54.948  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:34:57.887  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009346317 en la empresa: 3
-2024-05-18 13:34:57.887  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0138952 cco: 108700000000000000000009346342 empresa: 3 clave 1805202401010211983100120020110001389526619234415
-2024-05-18 13:34:58.531  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:35:00.753  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009346342 en la empresa: 3
-2024-05-18 13:35:00.753  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0138953 cco: 108700000000000000000009346351 empresa: 3 clave 1805202401010211983100120020110001389534002886213
-2024-05-18 13:35:01.393  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:35:03.255  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009346351 en la empresa: 3
-2024-05-18 13:35:03.257  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0138954 cco: 108700000000000000000009346355 empresa: 3 clave 1805202401010211983100120020110001389542152014519
-2024-05-18 13:35:03.841  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:35:05.668  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009346355 en la empresa: 3
-2024-05-18 13:35:05.668  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0138955 cco: 108700000000000000000009346381 empresa: 3 clave 1805202401010211983100120020110001389551334636212
-2024-05-18 13:35:06.258  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:35:08.087  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009346381 en la empresa: 3
-2024-05-18 13:35:08.087  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0138956 cco: 108700000000000000000009346426 empresa: 3 clave 1805202401010211983100120020110001389568164000611
-2024-05-18 13:35:08.662  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:35:10.554  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009346426 en la empresa: 3
-2024-05-18 13:35:10.554  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0138957 cco: 108700000000000000000009346432 empresa: 3 clave 1805202401010211983100120020110001389576316380416
-2024-05-18 13:35:11.234  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:35:13.300  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009346432 en la empresa: 3
-2024-05-18 13:35:13.300  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0138958 cco: 108700000000000000000009346438 empresa: 3 clave 1805202401010211983100120020110001389588971910515
-2024-05-18 13:35:13.941  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:35:15.984  WARN 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009346438 en la empresa: 3
-2024-05-18 13:35:15.984  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0138959 cco: 108700000000000000000009346441 empresa: 3 clave 1805202401010211983100120020110001389598728806616
-2024-05-18 13:35:16.646  INFO 12692 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
-2024-05-18 13:35:17.324  INFO 12692 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-18 13:35:17.327  INFO 12692 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-05-18 13:35:17.381  INFO 12692 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-20 15:28:40.929  INFO 14920 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.10 on NR-SIS-02 with PID 14920 (C:\Users\lchumi\Documents\GitHub\consumoWsdlSice\target\classes started by lchumi in C:\Users\lchumi\Documents\GitHub\consumoWsdlSice)
+2024-05-20 15:28:40.939 DEBUG 14920 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
+2024-05-20 15:28:40.942  INFO 14920 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-05-20 15:28:41.040  INFO 14920 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\lchumi\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/lchumi/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2024-05-20 15:28:41.041  INFO 14920 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-20 15:28:41.042  INFO 14920 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-20 15:28:43.463  INFO 14920 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-20 15:28:43.538  INFO 14920 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 3 JPA repository interfaces.
+2024-05-20 15:28:43.962  INFO 14920 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f27986a2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-20 15:28:44.043  INFO 14920 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-05-20 15:28:44.407  INFO 14920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
+2024-05-20 15:28:44.419  INFO 14920 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-20 15:28:44.420  INFO 14920 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
+2024-05-20 15:28:45.539  INFO 14920 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-20 15:28:45.540  INFO 14920 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4497 ms
+2024-05-20 15:28:45.623 DEBUG 14920 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
+2024-05-20 15:28:45.813  INFO 14920 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-20 15:28:45.862  INFO 14920 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2024-05-20 15:28:46.045  INFO 14920 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-05-20 15:28:46.149  INFO 14920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-20 15:28:46.524  INFO 14920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-20 15:28:46.541  INFO 14920 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2024-05-20 15:28:47.406  INFO 14920 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-05-20 15:28:47.422  INFO 14920 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-20 15:28:48.301  INFO 14920 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-05-20 15:28:48.614  WARN 14920 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-20 15:28:48.833  INFO 14920 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@16ee6286, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7afa99d6, org.springframework.security.web.context.SecurityContextPersistenceFilter@57c1e815, org.springframework.security.web.header.HeaderWriterFilter@7bfc90f8, org.springframework.web.filter.CorsFilter@7ce98ebf, org.springframework.security.web.authentication.logout.LogoutFilter@62b8b09b, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@42f090f9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66195a30, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c5ab871, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@72c99cbf, org.springframework.security.web.session.SessionManagementFilter@341bf785, org.springframework.security.web.access.ExceptionTranslationFilter@3489d5d7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6c36d23e]
+2024-05-20 15:28:49.166  INFO 14920 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-20 15:28:49.215  INFO 14920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
+2024-05-20 15:28:49.235  INFO 14920 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 8.881 seconds (JVM running for 9.715)
+2024-05-20 15:30:00.013  INFO 14920 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   :  ------------- Iniciando proceso ------------------- 
+2024-05-20 15:30:01.201  INFO 14920 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : GUI-001-106-0000132 cco: 100000000000000000009204964 empresa: 2 clave 2102202406019036806800120011060000001326630640615
+2024-05-20 15:30:02.568 ERROR 14920 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : Ocurrio un error a nivel general: I/O error on POST request for "http://localhost:8080/public/firmar/1": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2024-05-20 15:32:38.928  INFO 14920 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-20 15:32:38.932  INFO 14920 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-20 15:32:39.019  INFO 14920 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-20 15:32:44.280  INFO 22276 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.10 on NR-SIS-02 with PID 22276 (C:\Users\lchumi\Documents\GitHub\consumoWsdlSice\target\classes started by lchumi in C:\Users\lchumi\Documents\GitHub\consumoWsdlSice)
+2024-05-20 15:32:44.282 DEBUG 22276 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
+2024-05-20 15:32:44.283  INFO 22276 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-05-20 15:32:44.377  INFO 22276 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\lchumi\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/lchumi/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2024-05-20 15:32:44.378  INFO 22276 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-20 15:32:44.378  INFO 22276 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-20 15:32:45.391  INFO 22276 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-20 15:32:45.469  INFO 22276 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 3 JPA repository interfaces.
+2024-05-20 15:32:45.846  INFO 22276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$5dcc37c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-20 15:32:45.880  INFO 22276 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-05-20 15:32:46.103  INFO 22276 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
+2024-05-20 15:32:46.110  INFO 22276 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-20 15:32:46.110  INFO 22276 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
+2024-05-20 15:32:46.166  INFO 22276 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-20 15:32:46.166  INFO 22276 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1787 ms
+2024-05-20 15:32:46.227 DEBUG 22276 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
+2024-05-20 15:32:46.484  INFO 22276 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-20 15:32:46.536  INFO 22276 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2024-05-20 15:32:46.720  INFO 22276 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-05-20 15:32:46.826  INFO 22276 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-20 15:32:47.175  INFO 22276 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-20 15:32:47.198  INFO 22276 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2024-05-20 15:32:47.965  INFO 22276 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-05-20 15:32:47.982  INFO 22276 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-20 15:32:48.716  INFO 22276 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-05-20 15:32:49.013  WARN 22276 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-20 15:32:49.254  INFO 22276 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@12219d47, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29f04c61, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d29d4ff, org.springframework.security.web.header.HeaderWriterFilter@70a799d8, org.springframework.web.filter.CorsFilter@3f093447, org.springframework.security.web.authentication.logout.LogoutFilter@7e2747ec, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@7f0b4318, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c9a15c1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3c14f054, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60b58f7d, org.springframework.security.web.session.SessionManagementFilter@36657cb4, org.springframework.security.web.access.ExceptionTranslationFilter@3abeea3f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@12fbeb4a]
+2024-05-20 15:32:49.626  INFO 22276 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-20 15:32:49.675  INFO 22276 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
+2024-05-20 15:32:49.697  INFO 22276 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 6.01 seconds (JVM running for 6.837)
+2024-05-20 15:29:45.907  INFO 22276 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-20 15:29:45.909  INFO 22276 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-20 15:29:45.991  INFO 22276 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-20 15:29:49.313  INFO 10332 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Starting ConsumowsdlApplication using Java 17.0.10 on NR-SIS-02 with PID 10332 (C:\Users\lchumi\Documents\GitHub\consumoWsdlSice\target\classes started by lchumi in C:\Users\lchumi\Documents\GitHub\consumoWsdlSice)
+2024-05-20 15:29:49.315 DEBUG 10332 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Running with Spring Boot v2.7.10, Spring v5.3.26
+2024-05-20 15:29:49.316  INFO 10332 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-05-20 15:29:49.409  INFO 10332 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\lchumi\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/lchumi/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2024-05-20 15:29:49.410  INFO 10332 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-20 15:29:49.410  INFO 10332 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-20 15:29:50.341  INFO 10332 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-20 15:29:50.417  INFO 10332 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 3 JPA repository interfaces.
+2024-05-20 15:29:50.782  INFO 10332 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$1def3061] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-05-20 15:29:50.833  INFO 10332 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-05-20 15:29:51.173  INFO 10332 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7571 (http)
+2024-05-20 15:29:51.182  INFO 10332 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-20 15:29:51.183  INFO 10332 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
+2024-05-20 15:29:51.269  INFO 10332 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-20 15:29:51.270  INFO 10332 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1859 ms
+2024-05-20 15:29:51.345 DEBUG 10332 --- [restartedMain] c.c.c.security.filters.JwtRequestFilter  : Filter 'jwtRequestFilter' configured for use
+2024-05-20 15:29:51.574  INFO 10332 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-20 15:29:51.617  INFO 10332 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2024-05-20 15:29:51.791  INFO 10332 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-05-20 15:29:51.908  INFO 10332 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-20 15:29:52.256  INFO 10332 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-20 15:29:52.276  INFO 10332 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2024-05-20 15:29:53.077  INFO 10332 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-05-20 15:29:53.086  INFO 10332 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-20 15:29:53.738  INFO 10332 --- [restartedMain] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-05-20 15:29:54.019  WARN 10332 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-20 15:29:54.213  INFO 10332 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1f726eae, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a9b0505, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a8e64b8, org.springframework.security.web.header.HeaderWriterFilter@57c8fe75, org.springframework.web.filter.CorsFilter@11b29ee, org.springframework.security.web.authentication.logout.LogoutFilter@38f0720d, com.cumpleanos.consumowsdl.security.filters.JwtRequestFilter@259e230d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ee2ebfe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@fcda981, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1445b8ee, org.springframework.security.web.session.SessionManagementFilter@64ddf16b, org.springframework.security.web.access.ExceptionTranslationFilter@fa95505, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6515d83c]
+2024-05-20 15:29:54.551  INFO 10332 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-20 15:29:54.587  INFO 10332 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7571 (http) with context path ''
+2024-05-20 15:29:54.606  INFO 10332 --- [restartedMain] c.c.consumowsdl.ConsumowsdlApplication   : Started ConsumowsdlApplication in 5.798 seconds (JVM running for 6.622)
+2024-05-20 15:30:00.002  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   :  ------------- Iniciando proceso ------------------- 
+2024-05-20 15:30:01.047  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : GUI-001-106-0000132 cco: 100000000000000000009204964 empresa: 2 clave 2102202406019036806800120011060000001326630640615
+2024-05-20 15:30:02.258  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
+2024-05-20 15:30:04.555  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-104-0098333 cco: 100000000000000000009350418 empresa: 2 clave 2005202401019036806800120011040000983339278415915
+2024-05-20 15:30:12.492  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : 2005202401019036806800110011040000983339278415917
+2024-05-20 15:30:15.312  WARN 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009350418 en la empresa: 2
+2024-05-20 15:30:15.313  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : GUI-001-105-0000136 cco: 100000000000000000009231389 empresa: 2 clave 0803202406019036806800120011050000001369888179215
+2024-05-20 15:30:16.008  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
+2024-05-20 15:30:18.582  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-108-0047265 cco: 100000000000000000009338026 empresa: 2 clave 1305202401019036806800120011080000472656024915217
+2024-05-20 15:30:19.591  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : ARCHIVO NO CUMPLE ESTRUCTURA XML Se encontró el siguiente error en la estructura del comprobante: cvc-minInclusive-valid: Value '-0.01' is not facet-valid with respect to minInclusive '0.0' for type 'valor'.. ERROR
+2024-05-20 15:30:21.603  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0139050 cco: 108700000000000000000009349745 empresa: 3 clave 2005202401010211983100120020110001390504081345318
+2024-05-20 15:30:22.306  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
+2024-05-20 15:30:24.427  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : GUI-003-011-0009680 cco: 112600000000000000000009350498 empresa: 2 clave 2005202406019036806800120030110000096805635820517
+2024-05-20 15:30:25.169  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
+2024-05-20 15:30:25.184  WARN 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : CCOMFAC actualizado: 112600000000000000000009350498 en la empresa: 2
+2024-05-20 15:30:25.184  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0139082 cco: 108700000000000000000009350507 empresa: 3 clave 2005202401010211983100120020110001390827850431412
+2024-05-20 15:30:25.841  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
+2024-05-20 15:30:28.137  WARN 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009350507 en la empresa: 3
+2024-05-20 15:30:28.138  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0139083 cco: 108700000000000000000009350517 empresa: 3 clave 2005202401010211983100120020110001390838950867910
+2024-05-20 15:30:28.918  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
+2024-05-20 15:30:31.511  WARN 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009350517 en la empresa: 3
+2024-05-20 15:30:31.512  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0139084 cco: 108700000000000000000009350520 empresa: 3 clave 2005202401010211983100120020110001390845815167611
+2024-05-20 15:30:32.844  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
+2024-05-20 15:30:35.618  WARN 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009350520 en la empresa: 3
+2024-05-20 15:30:35.618  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0139085 cco: 108700000000000000000009350526 empresa: 3 clave 2005202401010211983100120020110001390852854435816
+2024-05-20 15:30:36.520  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
+2024-05-20 15:30:39.293  WARN 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009350526 en la empresa: 3
+2024-05-20 15:30:39.294  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0139086 cco: 108700000000000000000009350532 empresa: 3 clave 2005202401010211983100120020110001390869788397614
+2024-05-20 15:30:39.992  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
+2024-05-20 15:30:42.126  WARN 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 108700000000000000000009350532 en la empresa: 3
+2024-05-20 15:30:42.126  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : GUI-001-013-0000495 cco: 100000000000000000009248502 empresa: 2 clave 1903202406019036806800120010130000004950751852417
+2024-05-20 15:30:42.753  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
+2024-05-20 15:30:44.925  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-103-0104459 cco: 100000000000000000009350491 empresa: 2 clave 2005202401019036806800120011030001044599190551113
+2024-05-20 15:30:50.312  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : 2005202401019036806800110011030001044599190551115
+2024-05-20 15:30:52.613  WARN 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009350491 en la empresa: 2
+2024-05-20 15:30:52.614  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-002-011-0027016 cco: 112700000000000000000009350499 empresa: 4 clave 2005202401019042705600120020110000270168292329218
+2024-05-20 15:30:54.699  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FIRMA INVALIDA La firma es invalida [La firma es invalida RucComprobante:0190427056001 RucCertificado:0190368068001] ERROR
+2024-05-20 15:30:57.120  WARN 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 112700000000000000000009350499 en la empresa: 4
+2024-05-20 15:30:57.121  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-103-0104460 cco: 100000000000000000009350501 empresa: 2 clave 2005202401019036806800120011030001044609643515313
+2024-05-20 15:31:02.764  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : 2005202401019036806800110011030001044609643515315
+2024-05-20 15:31:05.730  WARN 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009350501 en la empresa: 2
+2024-05-20 15:31:05.730  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-103-0104461 cco: 100000000000000000009350523 empresa: 2 clave 2005202401019036806800120011030001044618128140314
+2024-05-20 15:31:10.369  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : 2005202401019036806800110011030001044618128140316
+2024-05-20 15:31:12.786  WARN 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009350523 en la empresa: 2
+2024-05-20 15:31:12.786  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-103-0104462 cco: 100000000000000000009350529 empresa: 2 clave 2005202401019036806800120011030001044621893627311
+2024-05-20 15:31:18.083  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : 2005202401019036806800110011030001044621893627313
+2024-05-20 15:31:20.553  WARN 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009350529 en la empresa: 2
+2024-05-20 15:31:20.554  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-103-0104463 cco: 100000000000000000009350542 empresa: 2 clave 2005202401019036806800120011030001044630892646613
+2024-05-20 15:31:25.390  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : 2005202401019036806800110011030001044630892646615
+2024-05-20 15:31:28.132  WARN 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009350542 en la empresa: 2
+2024-05-20 15:31:28.133  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-001-104-0098339 cco: 100000000000000000009350504 empresa: 2 clave 2005202401019036806800120011040000983398615257118
+2024-05-20 15:31:34.054  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : 2005202401019036806800110011040000983398615257111
+2024-05-20 15:31:36.869  WARN 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : XMLFAC actualizado: 100000000000000000009350504 en la empresa: 2
+2024-05-20 15:31:36.869  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : GUI-001-107-0000103 cco: 100000000000000000009242497 empresa: 2 clave 1503202406019036806800120011070000001037743763915
+2024-05-20 15:31:37.611  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : null
+2024-05-20 15:31:40.000  INFO 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : FAC-003-011-0020463 cco: 112600000000000000000009343750 empresa: 2 clave 1605202401019036806800120030110000204631983775311
+2024-05-20 15:31:50.546 ERROR 10332 --- [scheduling-1] c.c.c.cron.AutomatizacionWsdlScheduler   : Ocurrio un error a nivel general: I/O error on POST request for "http://localhost:8080/public/firmar/1": Unexpected end of file from server; nested exception is java.net.SocketException: Unexpected end of file from server
+2024-05-20 15:31:58.508  INFO 10332 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-20 15:31:58.512  INFO 10332 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-20 15:31:58.589  INFO 10332 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

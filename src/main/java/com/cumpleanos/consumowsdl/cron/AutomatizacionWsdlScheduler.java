@@ -53,7 +53,7 @@ public class AutomatizacionWsdlScheduler {
                         creaXmlEnvia(c);
                     } else {
                         String autorizacionEstado=obtieneAuth(c);
-                        String response = consumoService.firmarXml(c.getXmlf_caracter());
+                        String response = consumoService.firmarXml(c.getXmlf_caracter(),"1",c.getCli_mail());
                         System.out.println("------------------------------------------------");
                         log.info(response);
                         System.out.println("------------------------------------------------");
