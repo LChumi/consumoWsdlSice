@@ -22,9 +22,9 @@ public class SpringConsumoService {
 
     private final RestTemplate restTemplate;
 
-    public String firmarXml(String xml,String ambiente,String correo){
+    public String firmarXml(String xml,String correo){
 
-        String url = baseSpringUrl + ambiente + "?correo=" + correo;
+        String url = baseSpringUrl  + "?correo=" + correo;
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_XML);
