@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Collections;
+
 
 @Service
 @Slf4j
@@ -28,8 +31,10 @@ public class SpringConsumoService {
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_XML);
+        headers.setAccept(Collections.singletonList(MediaType.APPLICATION_XML));
+        headers.setAcceptCharset(Collections.singletonList(StandardCharsets.UTF_8));
 
-        HttpEntity<String> entity = new HttpEntity<String>(xml, headers);
+        HttpEntity<String> entity = new HttpEntity<>(xml, headers);
 
         try {
             ResponseEntity<String> response = restTemplate.postForEntity(url, entity, String.class);
