@@ -13,8 +13,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PreDestroy;
 import java.math.BigInteger;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 @Component
 @RequiredArgsConstructor
@@ -26,6 +30,7 @@ public class AutomatizacionFacElectronica {
     private final CComfacService cComfacService;
     private final XmlFacService xmlFacService;
     private final SpringConsumoService consumoService;
+    private ExecutorService executor = Executors.newSingleThreadExecutor();
 
     @Scheduled(cron = "${cron.expression.30min}")
     private void gestionFactura(){
@@ -36,20 +41,25 @@ public class AutomatizacionFacElectronica {
                 for (ComprobElecGrande c : comprobantes) {
                     log.info(c.getXmlf_comprobante() + " cco: " + c.getCco_codigo() + " empresa: " + c.getXmlf_empresa() + " clave " + c.getXmlf_clave());
                     if (c.getXmlf_caracter() == null) {
+                        // No necesitamos esperar por esta tarea, ya que no hay llamadas asincrónicas
                         creaXmlEnvia(c);
                     } else {
-                        String respuesta =enviarXml(c);
-                        if (validarClaveAcceso(respuesta)){
-                            guardarAutorizacion(c.getCco_codigo(),c.getXmlf_empresa(),respuesta);
-                            guardarAutorizacionXmlFac(c.getCco_codigo(),c.getXmlf_empresa(),respuesta);
+                        // Ejecutar la tarea en el executor y esperar su resultado
+                        Future<String> future = executor.submit(() -> enviarXml(c));
+                        String respuesta = future.get(); // Esperar a que la tarea termine y obtener el resultado
+                        if (validarClaveAcceso(respuesta)) {
+                            guardarAutorizacion(c.getCco_codigo(), c.getXmlf_empresa(), respuesta);
+                            guardarAutorizacionXmlFac(c.getCco_codigo(), c.getXmlf_empresa(), respuesta);
                         } else {
-                            guardarErrorXmlFac(c.getCco_codigo(),c.getXmlf_empresa(),respuesta);
+                            guardarErrorXmlFac(c.getCco_codigo(), c.getXmlf_empresa(), respuesta);
                         }
                     }
                 }
             }
-        }catch (Exception e){
-            log.error("Ocurrio un error a nivel general: "+e.getMessage());
+        } catch (Exception e) {
+            log.error("Ocurrio un error a nivel general: " + e.getMessage());
+        } finally {
+            executor.shutdown(); // Cerrar el executor cuando hayamos terminado de usarlo
         }
     }
 
@@ -117,6 +127,11 @@ public class AutomatizacionFacElectronica {
             return false;
         }
         return claveAcceso.matches("\\d{49}");
+    }
+
+    @PreDestroy
+    public void onDestroy() {
+        executor.shutdown();
     }
 
 }
