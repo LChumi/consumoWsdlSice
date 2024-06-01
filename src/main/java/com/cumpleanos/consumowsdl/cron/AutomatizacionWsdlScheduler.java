@@ -39,9 +39,7 @@ public class AutomatizacionWsdlScheduler {
     private final XmlFacService xmlFacService;
     private final SpringConsumoService consumoService;
 
-    
-
-    @Scheduled(cron = "${cron.expression.30min}")
+    //@Scheduled(cron = "${cron.expression.30min}")
     private void gestionSise(){
         log.info(" ------------- Iniciando proceso ------------------- ");
         try {
@@ -53,7 +51,8 @@ public class AutomatizacionWsdlScheduler {
                         creaXmlEnvia(c);
                     } else {
                         String autorizacionEstado=obtieneAuth(c);
-                        String response = consumoService.firmarXml(c.getXmlf_caracter(),c.getCli_mail());
+                        //String response = consumoService.firmarXml(c.getXmlf_caracter(),c.getCli_mail());
+                        String response = consumoService.firmarXml(c.getXmlf_caracter(),"lchumi@cumpleanos.com.ec");
                         System.out.println("------------------------------------------------");
                         log.info(response);
                         System.out.println("------------------------------------------------");

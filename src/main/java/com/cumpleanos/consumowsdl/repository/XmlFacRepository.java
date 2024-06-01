@@ -25,4 +25,9 @@ public interface XmlFacRepository extends JpaRepository<XmlFac, BigInteger> {
     @Transactional
     void updateXmlFacByXmlfCcoComproba(@Param("id") BigInteger id,@Param("xmlfError") String xmlfError,@Param("empresa") Long empresa);
 
+    @Query(value = "UPDATE XmlFac SET xmlfAutorizacion=:xmlfAutorizacion WHERE xmlfCcoComproba=:id AND xmlfEmpresa=:empresa")
+    @Modifying
+    @Transactional
+    void updateAuthXmlFacByXmlfCcoComproba(@Param("id") BigInteger id,@Param("xmlfAutorizacion") String xmlfAutorizacion,@Param("empresa") Long empresa);
+
 }

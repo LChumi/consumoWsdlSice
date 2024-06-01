@@ -14,5 +14,6 @@ public interface XmlFacService {
     XmlFac guardar(XmlFac xmlFac);
     void actualizarPorComprobante(BigInteger id,String error,Long empresa);
     XmlFac porIdYEmpresa(BigInteger id, Long empresa);
+    void actualizarAutorizacion(BigInteger id,String auth,Long empresa);
 
 }

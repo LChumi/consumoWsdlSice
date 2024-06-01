@@ -33,5 +33,10 @@ public class XmlFacServiceImpl implements XmlFacService{
         return xmlFacRepository.findByXmlfCcoComprobaAndXmlfEmpresa(id, empresa);
     }
 
+    @Override
+    public void actualizarAutorizacion(BigInteger id, String auth, Long empresa) {
+        xmlFacRepository.updateAuthXmlFacByXmlfCcoComproba(id,auth,empresa);
+    }
+
 
 }
