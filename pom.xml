@@ -94,7 +94,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<!-- plugin utilizado para ver los metodos de WSDL  -->
-			<plugin>
+			<!--<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>
 				<version>0.14.0</version>
@@ -115,7 +115,7 @@
 						</schema>
 					</schemas>
 				</configuration>
-			</plugin>
+			</plugin>-->
 		</plugins>
 	</build>
 

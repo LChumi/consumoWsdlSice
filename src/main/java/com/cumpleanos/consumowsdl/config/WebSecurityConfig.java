@@ -31,7 +31,7 @@ public class WebSecurityConfig {
         http
                 .csrf().disable()
                 .authorizeRequests((authorize) -> authorize
-                        .antMatchers("/auth/**").permitAll()
+                        .antMatchers("/auth/**","/apiWsdl/envioComprobante/**","/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs", "/webjars/**", "/v3/api-docs/swagger-config").permitAll()
                         .antMatchers("/xmlFac/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )

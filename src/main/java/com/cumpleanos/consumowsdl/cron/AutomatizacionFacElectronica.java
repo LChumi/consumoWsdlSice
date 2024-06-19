@@ -30,36 +30,44 @@ public class AutomatizacionFacElectronica {
     private final CComfacService cComfacService;
     private final XmlFacService xmlFacService;
     private final SpringConsumoService consumoService;
-    private ExecutorService executor = Executors.newSingleThreadExecutor();
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+
 
     @Scheduled(cron = "${cron.expression.30min}")
-    private void gestionFactura(){
+    public void gestionFactura() {
         log.info(" ------------- Iniciando proceso Envio Facturacion electronica------------------- ");
         try {
             List<ComprobElecGrande> comprobantes = comprobanteService.listar();
             if (!comprobantes.isEmpty()) {
                 for (ComprobElecGrande c : comprobantes) {
-                    log.info(c.getXmlf_comprobante() + " cco: " + c.getCco_codigo() + " empresa: " + c.getXmlf_empresa() + " clave " + c.getXmlf_clave());
-                    if (c.getXmlf_caracter() == null) {
-                        // No necesitamos esperar por esta tarea, ya que no hay llamadas asincrónicas
-                        creaXmlEnvia(c);
-                    } else {
-                        // Ejecutar la tarea en el executor y esperar su resultado
-                        Future<String> future = executor.submit(() -> enviarXml(c));
-                        String respuesta = future.get(); // Esperar a que la tarea termine y obtener el resultado
-                        if (validarClaveAcceso(respuesta)) {
-                            guardarAutorizacion(c.getCco_codigo(), c.getXmlf_empresa(), respuesta);
-                            guardarAutorizacionXmlFac(c.getCco_codigo(), c.getXmlf_empresa(), respuesta);
-                        } else {
-                            guardarErrorXmlFac(c.getCco_codigo(), c.getXmlf_empresa(), respuesta);
+                    log.info("{} cco: {} empresa: {} clave {}", c.getXmlf_comprobante(), c.getCco_codigo(), c.getXmlf_empresa(), c.getXmlf_clave());
+                    Future<?> future = executor.submit(() -> {
+                        try {
+                            if (c.getXmlf_caracter() == null) {
+                                // No necesitamos esperar por esta tarea, ya que no hay llamadas asincrónicas
+                                creaXmlEnvia(c);
+                            } else {
+                                // Ejecutar la tarea y esperar su resultado
+                                String respuesta = enviarXml(c); // Esperar a que la tarea termine y obtener el resultado
+                                if (validarClaveAcceso(respuesta)) {
+                                    log.info("Autorizado {}, {} , respuesta -> {}",c.getXmlf_comprobante(), c.getCco_codigo() , respuesta);
+                                    guardarAutorizacion(c.getCco_codigo(), c.getXmlf_empresa(), respuesta);
+                                    guardarAutorizacionXmlFac(c.getCco_codigo(), c.getXmlf_empresa(), respuesta);
+                                } else {
+                                    log.error("Error {}, {} , respuesta -> {}",c.getXmlf_comprobante(), c.getCco_codigo() , respuesta);
+                                    guardarErrorXmlFac(c.getCco_codigo(), c.getXmlf_empresa(), respuesta);
+                                }
+                            }
+                        } catch (Exception e) {
+                            log.error("Ocurrio un error en la tarea para el comprobante: " + c.getCco_codigo(), e);
                         }
-                    }
+                    });
+                    // Esperar a que la tarea termine antes de pasar a la siguiente
+                    future.get();
                 }
             }
         } catch (Exception e) {
-            log.error("Ocurrio un error a nivel general: " + e.getMessage());
-        } finally {
-            executor.shutdown(); // Cerrar el executor cuando hayamos terminado de usarlo
+            log.error("Ocurrio un error a nivel general: " + e.getMessage(), e);
         }
     }
 
@@ -122,11 +130,15 @@ public class AutomatizacionFacElectronica {
         }
     }
 
-    private static boolean validarClaveAcceso(String claveAcceso){
-        if (claveAcceso.length() != 49){
+    private boolean validarClaveAcceso(String claveAcceso){
+        try {
+            if (claveAcceso.length() != 49) {
+                return false;
+            }
+            return claveAcceso.matches("\\d{49}");
+        }catch (Exception e){
             return false;
         }
-        return claveAcceso.matches("\\d{49}");
     }
 
     @PreDestroy
