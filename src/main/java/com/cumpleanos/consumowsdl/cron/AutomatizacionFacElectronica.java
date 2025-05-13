@@ -43,7 +43,8 @@ public class AutomatizacionFacElectronica {
                     log.info("{} cco: {} empresa: {} clave {}", c.getXmlf_comprobante(), c.getCco_codigo(), c.getXmlf_empresa(), c.getXmlf_clave());
                     Future<?> future = executor.submit(() -> {
                         try {
-                            if (c.getXmlf_caracter() == null) {
+                            if (c.getXmlf_caracter() == null || c.getXmlf_caracter().isEmpty()) {
+                                log.info("Comprobante sin informacion creando xml");
                                 // No necesitamos esperar por esta tarea, ya que no hay llamadas asincrónicas
                                 creaXmlEnvia(c);
                             } else {
@@ -73,6 +74,7 @@ public class AutomatizacionFacElectronica {
 
     private void creaXml(ComprobElecGrande c){
         try {
+            log.info("Creando xml para el comprobante: {} cco: {} empresa: {}",c.getXmlf_comprobante(), c.getCco_codigo(), c.getXmlf_empresa());
             oracleRepository.crearXml(c.getXmlf_empresa(), c.getCco_codigo().toString(),c.getXml_tipoComprobante());
         }catch (Exception e){
             log.error("Ocurrio un problema al crear xml: "+" cco: "+c.getCco_codigo()+" en la empresa: "+c.getXmlf_empresa()+" Error "+e.getMessage());
