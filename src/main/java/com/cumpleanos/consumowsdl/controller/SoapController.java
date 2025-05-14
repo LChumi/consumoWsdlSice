@@ -1,6 +1,5 @@
 package com.cumpleanos.consumowsdl.controller;
 
-import com.cumpleanos.consumowsdl.client.SoapClient;
 import com.cumpleanos.consumowsdl.models.ComprobElecGrande;
 import com.cumpleanos.consumowsdl.services.ComprobElecGrandeService;
 import com.cumpleanos.consumowsdl.services.SpringConsumoService;

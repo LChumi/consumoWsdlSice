@@ -86,7 +86,7 @@ public class ComprobElecGrandeController {
             ComprobElecGrande com=service.porCcoYEmpresa(cco,empresa);
             oracleRepository.crearXml(com.getXmlf_empresa(), com.getCco_codigo().toString(),com.getXml_tipoComprobante());
 
-            return ResponseEntity.ok("Procedimiento ejecutado correctamente");
+            return ResponseEntity.ok("ok");
         } catch (Exception e) {
             LOG.error(e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error "+e);
