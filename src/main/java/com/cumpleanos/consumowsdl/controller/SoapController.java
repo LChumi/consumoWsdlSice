@@ -39,7 +39,6 @@ public class SoapController {
 
     @PostMapping("/reenviarComprobante")
     public ResponseEntity<?> reenviarComprobante(@RequestBody String xml, @RequestParam String email){
-        log.info(xml);
         try {
             String respuesta =springConsumoService.firmarXml(xml, email);
             return ResponseEntity.ok(respuesta);
